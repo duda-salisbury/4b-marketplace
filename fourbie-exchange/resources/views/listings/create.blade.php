@@ -8,7 +8,23 @@
 
         <!-- photo uploads -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 my-4">
+
+                <!-- card for listing type, two buttons (standard, premium) -->
+                <div class="card">
+                    <div class="card-header">
+                        Listing Type
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="btn-group flex-grow-1" role="group" aria-label="Listing Type">
+                                <button type="submit" class="btn btn-outline-primary">Standard</button>
+                                <button type="submit" class="btn btn-outline-success">Premium</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-header">
                         Details
@@ -54,7 +70,7 @@
 
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
-                                <textarea name="description" id="description" rows='20' class="form-control"></textarea>
+                                <textarea name="description" id="description" rows='12' class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="price" class="form-label">Price</label>
@@ -131,12 +147,12 @@
                             </div>
                         </form>
                     </div>
-                    
+
                 </div>
 
                 <!-- card for submit button / cancel button -->
                 <div class="mt-4 d-flex">
-                        <button type="submit" class="btn btn-lg btn-success flex-grow-1">Save Listing</button>
+                    <button type="submit" class="btn btn-lg btn-success flex-grow-1">Save Listing</button>
 
                 </div>
 

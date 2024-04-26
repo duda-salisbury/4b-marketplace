@@ -216,6 +216,12 @@ body {
     border-color: #eb6432;
     color: #eb6432;
   }
+
+  .btn-outline-primary:hover {
+    background-color: #eb6432;
+    border-color: #eb6432;
+    color: #ffffff;
+  }
   
   .btn-success {
     background-color: #5c826b;
