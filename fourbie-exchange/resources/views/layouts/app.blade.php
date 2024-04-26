@@ -5,37 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        @yield('title')
+        @yield('title') -  Fourbie Exchange
     </title>
-    <!-- Bootstrap 5.3 CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="fourbie_circle.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- oswald font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap">
+    <!-- Quattrocento font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap">
+    <!-- font yellowtail -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap">
+    <!-- bs icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- HTMX CDN -->
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg bg-white">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('listings') }}">Fourbie Exchange</a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('listings') }}">Listings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('listings.create') }}">Create Listing</a>
-                </li>
-            </ul>
+            <a class="px-2 navbar-brand bg-fe-dark" href="#">Fourbie.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Listings</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sell</a>
+                    </li>
+                </ul>
+
+
+                <!-- account stuff -->
+                <div class="dropdown mx-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="accountDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                        <li><a class="dropdown-item" href="#">Register/Login</a></li>
+                        <li><a class="dropdown-item" href="#">My Account</a></li>
+                        <li><a class="dropdown-item" href="#">My Auctions</a></li>
+                        <li><a class="dropdown-item" href="#">My Classifieds</a></li>
+                        <li><a class="dropdown-item" href="#">My Bids</a></li>
+                        <li><a class="dropdown-item" href="#">My Watchlist</a></li>
+                        <li><a class="dropdown-item" href="#">My Messages</a></li>
+                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </nav>
 
-    <div class="container pt-4">
         @yield('content')
-    </div>
 
     <!-- Bootstrap 5.3 JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

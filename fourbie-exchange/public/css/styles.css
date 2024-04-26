@@ -1,0 +1,236 @@
+.badge {
+    border-radius: 0!important;
+}
+
+.material-symbols-outlined {
+    position: relative;
+    bottom:-5px;
+}
+
+h1, h2, h3, h4, h5, h5, h6, .badge {
+    font-family: 'Oswald', sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 8px 15px;
+    font-weight: 400;
+}
+
+.img-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img {
+  border-radius: 4px;
+}
+
+.card-location {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 200;
+}
+
+.card a {
+  /** green/success color **/
+  color: #5c826b;
+}
+
+/** make the card headers transparent and bump them up into the image */
+.vert-card .card-header {
+    background-color: transparent;
+    border-bottom: 0px;
+    position: relative;
+    top:-35px;
+    z-index: 1;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Oswald', sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    /** collapse the bottom margin so the card body is flush with the image */
+    margin-bottom: -35px;
+}
+
+
+.card-footer, .card-location {
+  
+  
+    font-family: 'Oswald', sans-serif !important;
+    letter-spacing: 0.5px;
+    font-weight: 200;
+    font-size:14px;
+}
+
+/** when a card is hovered, make it subtly obvious */
+.card:hover {
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+    transition: box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover h5 {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #ebe6df;
+    font-size:14px;
+    font-family: 'Quattrocento', sans-serif;
+  }
+  
+  .navbar {
+    background-color: #d1c8bd;
+  }
+  
+  .navbar-brand {
+    color: #eeeeee;
+    font-size:24px;
+    font-family: "Yellowtail", cursive;
+  }
+  
+  .nav-link {
+    color: #000; 
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link{
+    color: #333;
+  }
+
+  .nav-link:hover {
+    color: #eb6432;
+  }
+  
+  .btn-primary {
+    background-color: #9f8b7d;
+    border-color: #9f8b7d;
+    color:#444;
+  }
+  
+  .btn-primary:hover {
+    background-color: #806a5e;
+    border-color: #806a5e;
+  }
+  
+  .card {
+    background-color: #f2eee7;
+    border-color: #d1c8bd;
+  }
+  
+  .card-title {
+    color: #4a4a4a;
+    height: 2.5em;
+    overflow: hidden;
+  }
+  
+  .card-text {
+    color: #4a4a4a;
+  }
+  
+  .badge {
+    background-color: #9f8b7d;
+  }
+  
+  .text-muted {
+    color: #7b7b7b;
+  }
+
+ 
+
+
+  /* Badge Classes */
+.bg-primary {
+    background-color: #eb6432!important;
+    color: #ffffff!important;
+  }
+  
+  .bg-success {
+    background-color: #5c826b!important;
+    color: #ffffff;
+  }
+  
+  .bg-error {
+    background-color: #bb5a5a!important;;
+    color: #ffffff;
+  }
+  
+  .bg-secondary {
+    background-color: #b7b5a5!important;;
+    color: #ffffff;
+  }
+  
+  .bg-alert {
+    background-color: #c8a95c!important;;
+    color: #ffffff;
+  }
+
+  .bg-fe-dark {
+    background-color:#332C13;
+    color: #ffffff;
+  }
+  
+  /* Button Classes */
+
+  .btn {
+    border-radius: 0!important;
+    font-family: 'Oswald', sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  
+  .btn-primary {
+    background-color: #eb6432;
+    border-color: #eb6432;
+    color: #ffffff;
+  }
+
+  .btn-outline-primary {
+    border-color: #eb6432;
+    color: #eb6432;
+  }
+  
+  .btn-success {
+    background-color: #5c826b;
+    border-color: #5c826b;
+    color: #ffffff;
+  }
+  
+  .btn-error {
+    background-color: #bb5a5a;
+    border-color: #bb5a5a;
+    color: #ffffff;
+  }
+  
+  .btn-secondary {
+    background-color:rgb(108, 117, 125);
+    border-color:rgb(108, 117, 125);
+    color: #fff;
+  }
+
+  .btn-outline-secondary {
+    border-color: #b7b5a5;
+    color:#fff;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color:rgb(108, 117, 125);
+    border-color:rgb(108, 117, 125);
+    
+    color: #fff;
+  }
+  
+  .btn-alert {
+    background-color: #c8a95c;
+    border-color: #c8a95c;
+    color: #ffffff;
+  }
+  
