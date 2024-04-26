@@ -2,6 +2,17 @@
     border-radius: 0!important;
 }
 
+.filters {
+  position: sticky;
+  top: 50px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
 .material-symbols-outlined {
     position: relative;
     bottom:-5px;
@@ -44,7 +55,7 @@ h1, h2, h3, h4, h5, h5, h6, .badge {
     background-color: transparent;
     border-bottom: 0px;
     position: relative;
-    top:-35px;
+    top:-45px;
     z-index: 1;
     padding: 0px;
     margin: 0px;
@@ -58,14 +69,17 @@ h1, h2, h3, h4, h5, h5, h6, .badge {
     margin-bottom: -35px;
 }
 
+.card-body {
+  padding-bottom: 24px;
+  line-height: 24px;
+  font-size: 16px;
+}
 
 .card-footer, .card-location {
-  
-  
-    font-family: 'Oswald', sans-serif !important;
     letter-spacing: 0.5px;
     font-weight: 200;
     font-size:14px;
+    padding-bottom: 10px;
 }
 
 /** when a card is hovered, make it subtly obvious */
@@ -93,6 +107,11 @@ body {
     color: #eeeeee;
     font-size:24px;
     font-family: "Yellowtail", cursive;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .navbar-brand:hover {
+    color: #eb6432;
   }
   
   .nav-link {
@@ -100,6 +119,7 @@ body {
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     font-weight: 400;
+    font-size:18px;
   }
 
   .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link{
@@ -128,7 +148,6 @@ body {
   
   .card-title {
     color: #4a4a4a;
-    height: 2.5em;
     overflow: hidden;
   }
   
@@ -137,7 +156,7 @@ body {
   }
   
   .badge {
-    background-color: #9f8b7d;
+    background-color:#332C13;
   }
   
   .text-muted {
@@ -234,3 +253,9 @@ body {
     color: #ffffff;
   }
   
+
+  .listing-results .badge {
+    font-size: 18px;
+    padding: 8px 15px;
+    font-weight: 400;
+  }

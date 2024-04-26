@@ -60,10 +60,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
                         <li><a class="dropdown-item" href="#">Register/Login</a></li>
                         <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li><a class="dropdown-item" href="#">My Auctions</a></li>
                         <li><a class="dropdown-item" href="#">My Classifieds</a></li>
-                        <li><a class="dropdown-item" href="#">My Bids</a></li>
-                        <li><a class="dropdown-item" href="#">My Watchlist</a></li>
                         <li><a class="dropdown-item" href="#">My Messages</a></li>
                         <li><a class="dropdown-item" href="#">Sign Out</a></li>
                     </ul>

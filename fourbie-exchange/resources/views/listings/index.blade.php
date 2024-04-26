@@ -83,8 +83,10 @@
 
                                 </div>
 
-                                <button class="mt-3 btn btn-sm btn-secondary btn-block" type="submit">View Results
-                                    &raquo;</button>
+                                <div class="d-grid gap-2">
+                                    <button class="mt-3 btn btn-lg btn-success mt-4 btn-block" type="submit">View Results
+                                        &raquo;</button>
+                                </div>
                             </div>
 
 
@@ -110,7 +112,7 @@
                                     min="0" max="1850000" placeholder="$1850000" />
 
                                 <!-- Transmission Type -->
-                                <div class="mt-4 filter-group" style="border-bottom:1px solid #000;">
+                                <div class="mt-4 filter-group">
                                     <div class="form-label">Transmission</div>
                                     <div class="form-check">
                                         <input type="checkbox" name="transmission_type[]"
@@ -129,7 +131,7 @@
                                 </div>
 
                                 <!-- Fuel Type -->
-                                <div class="mt-4 filter-group" style="border-bottom:1px solid #000;">
+                                <div class="mt-4 filter-group">
                                     <div class="form-label">Fuel</div>
                                     <div class="form-check">
                                         <input type="checkbox" name="engine_fuel[]"
@@ -160,7 +162,7 @@
                                 </div>
 
                                 <!-- Vehicle Type -->
-                                <div class="mt-4 filter-group" style="border-bottom:1px solid #000;">
+                                <div class="mt-4 filter-group">
                                     <div class="form-label">Vehicle Type</div>
                                     <div class="form-check">
                                         <input type="radio" name="vehicle_type" id="listingfilter-type_any"
@@ -273,30 +275,14 @@
                                         <label for="listingfilter-era_2020" class="form-check-label">2020s</label>
                                     </div>
                                 </div>
-                                <button class="btn btn-secondary btn-sm ma-auto btn-block" type="submit">
-                                    View Results &raquo;
-                                </button>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success btn-lg mt-3 btn-block" type="submit">
+                                        View Results &raquo;
+                                    </button>
+                                </div>
 
                             </div>
                         </div>
-
-                        <div class="card">
-
-                            <div class="card-body d-flex justify-content-between align-items-center d-xs-flex d-lg-none"
-                                style="position: fixed; left:0px; width:100%; bottom:0px; background:white; padding:10px;">
-                                <button class="form-close btn btn-outline-secondary btn-sm" type="button">
-                                    Close
-                                </button>
-
-                                <button class="btn btn-primary btn-sm form-close">
-                                    View Results &raquo;
-                                </button>
-                            </div>
-                        </div>
-
-                        <input type="hidden" name="orderby" id="form-fields-orderby" value="" />
-                        <input type="hidden" name="order" id="form-fields-order" value="" />
-
                     </form>
 
 
@@ -304,15 +290,59 @@
 
 
 
-                <div class="col-lg-9">
+                <div class="col-lg-9 listing-results">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h1 class="card-title">Hot Listings</h1>
+                                    <h2 class="card-subtitle mb-2">Find your Perfect Fourbie.</h2>
+                                    <p class="card-text">Looking for a place to buy a new or used 4x4 or truck? You've
+                                        found
+                                        it. All the best overland and off-road trucks for sale near you, all in one place.
+                                    </p>
+                                    <a href="/sell" class="btn btn-secondary text-white">Sell Your Fourbie</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" justify-content-between text-white my-4">
+
+                            <div class="d-flex align-items-center">
+                                <div class="currently-active mt-2 d-none">
+                                    <!-- Display the "Price" filter if it has changed -->
+                                                            </div>
+                            </div>
+        
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 style="font-size:12px; font-weight:600; line-height:24px;">
+                                        Showing 1-24 of 1124                            </h5>
+                                </div>
+                                <div>
+                                    <div class="select-filter">
+                                        <div class="form-group" style="display: flex;align-items: center;">
+                                            <select style="padding-right:35px;" name="sortby" id="sortby" onchange="fourbie_select_sort_option(this);" class="form-control dense">
+                                                                                        <option value="date_desc">Newly Listed</option>
+                                                <option value="date_asc">Oldest Listings</option>
+                                                <option value="price_asc">Price (Low to High)</option>
+                                                <option value="price_desc">Price (High to Low)</option>
+                                                <option value="model_year_asc">Year (Oldest First)</option>
+                                                <option value="model_year_desc">Year (Newest First)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class="vert-card card h-100">
                                 <img src="{{ asset('img/7.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center px-2">
                                         <span class="badge bg-success">$18,000</span>
-                                        <span class="badge">accepting offers</span>
+                                        <span class="badge">make an offer</span>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -324,12 +354,6 @@
                                 </div>
 
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
 
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
@@ -339,7 +363,7 @@
                                     </li>
                                 </ul>
 
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
@@ -348,12 +372,12 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class="vert-card card h-100">
                                 <img src="{{ asset('img/8.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center px-2">
-                                        <span class="badge bg-primary">$18,000</span>
+                                        <span class="badge bg-success">$18,000</span>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -366,13 +390,6 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
                                             account_circle
                                         </span>
                                         Northeast Auto Gallery, LLC
@@ -380,7 +397,7 @@
                                 </ul>
 
 
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
@@ -389,13 +406,13 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class=" vert-card card h-100">
                                 <img src="{{ asset('img/9.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center px-2">
-                                        <span class="badge bg-primary">$18,000</span>
-                                        <span class="badge">accepting offers</span>
+                                        <span class="badge bg-success">$18,000</span>
+                                        <span class="badge">make an offer</span>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -408,19 +425,12 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
                                             account_circle
                                         </span>
                                         Northeast Auto Gallery, LLC
                                     </li>
                                 </ul>
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
@@ -429,12 +439,12 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class="vert-card card h-100">
                                 <img src="{{ asset('img/10.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-primary">$18,000</span>
+                                        <span class="badge bg-success">$18,000</span>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -444,12 +454,6 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
 
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
@@ -458,7 +462,7 @@
                                         Northeast Auto Gallery, LLC
                                     </li>
                                 </ul>
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
@@ -467,7 +471,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class="vert-card card h-100">
                                 <img src="{{ asset('img/1.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
@@ -484,13 +488,6 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
                                             account_circle
                                         </span>
                                         <a href="#">
@@ -498,7 +495,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
@@ -507,13 +504,13 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-lg-4 col-md-6 mb-4">
                             <div class="vert-card card h-100">
                                 <img src="{{ asset('img/2.jpg') }}" class="card-img-top" alt="Vehicle Image">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center px-2">
                                         <span class="badge bg-success">$18,000</span>
-                                        <span class="badge bg-blue">accepting offers</span>
+                                        <span class="badge">make an offer</span>
 
                                     </div>
                                 </div>
@@ -524,12 +521,6 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <span class="material-symbols-outlined">
-                                            speed
-                                        </span>
-                                        32,000 miles
-                                    </li>
 
                                     <li class="list-group-item">
                                         <span class="material-symbols-outlined">
@@ -538,7 +529,7 @@
                                         <a href="#">Northeast Auto Gallery, LLC</a>
                                     </li>
                                 </ul>
-                                <div class="card-footer text-end">
+                                <div class="card-footer">
                                     <span class="material-symbols-outlined">
                                         location_on
                                     </span>
