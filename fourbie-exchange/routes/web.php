@@ -17,8 +17,8 @@ Route::get('/listings', function () {
     return view('listings.index');
 })->name('listings');
 
-Route::get('/listings/show', function ($listing) {
-    return view('listings.show', ['listing' => $listing]);
+Route::get('/listings/show', function () {
+    return view('listings.show');
 })->name('listings.show');
 
 Route::get('/listings/create', function () {
