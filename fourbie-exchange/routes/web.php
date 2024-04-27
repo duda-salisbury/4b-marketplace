@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListingController;
 
 /** temp frontend routes for joel's building stuff */
 
@@ -33,3 +34,12 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+
+
+/**
+ * Admin Routes
+ */
+
+Route::prefix('admin')->group(function () {
+    Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
+});

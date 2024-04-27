@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleModel extends Model
 {
 
-    protected $fillable = ['name', 'slug', 'make_id'];
+    protected $fillable = ['name', 'slug', 'vehicle_make_id'];
 
     public function make()
     {

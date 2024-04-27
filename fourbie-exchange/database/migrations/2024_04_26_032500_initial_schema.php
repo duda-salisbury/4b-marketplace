@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('vehicle_makes', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->timestamps();
         });
 
@@ -72,7 +72,7 @@ return new class extends Migration
         // Create Listings
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->string('title')->index();
             $table->string('slug')->unique();
             $table->string('status')->default('draft');
             $table->longText('content')->nullable();
@@ -100,7 +100,7 @@ return new class extends Migration
             $table->string('engine')->nullable();
             $table->string('drivetrain')->nullable();
             $table->string('body_style')->nullable();
-            $table->string('title')->nullable();
+            $table->string('title_status')->nullable();
             $table->string('vin')->nullable();
             $table->timestamps();
         });

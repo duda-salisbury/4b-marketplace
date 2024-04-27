@@ -19,16 +19,20 @@ class Listing extends Model
 
     public function make()
     {
-        return $this->belongsTo(VehicleMake::class);
+        return $this->belongsTo(VehicleMake::class, 'vehicle_make_id');
     }
 
     public function model()
     {
-        return $this->belongsTo(VehicleModel::class);
+        return $this->belongsTo(VehicleModel::class, 'vehicle_model_id');
+    }
+
+    public function type() {
+        return $this->belongsTo(VehicleType::class, 'vehicle_type_id');
     }
 
     public function image()
     {
-        return $this->belongsTo(Image::class);
+        return $this->belongsTo(Image::class, 'image_id');
     }
 }
