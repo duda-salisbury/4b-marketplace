@@ -3,7 +3,7 @@
 @section('title', 'Create Listing')
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container mt-5 pt-4">
         <h1>Create Listing</h1>
 
         <!-- photo uploads -->
@@ -11,7 +11,7 @@
             <div class="col-md-6 my-4">
 
                 <!-- card for listing type, two buttons (standard, premium) -->
-                <div class="card">
+                <div class="card mb-4 bg-white">
                     <div class="card-header">
                         Listing Type
                     </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card bg-white">
                     <div class="card-header">
                         Details
                     </div>
@@ -39,12 +39,12 @@
 
                             <!-- make, model, year -->
                             <div class="d-flex">
-                                <div class="flex-grow-1 mb-3">
+                                <div class="flex-grow-1 mb-3 me-2">
                                     <label for="year" class="form-label">Year</label>
                                     <input type="text" name="year" id="year" class="form-control">
                                 </div>
 
-                                <div class="flex-grow-1 mb-3">
+                                <div class="flex-grow-1 mb-3 me-2">
                                     <label for="make" class="form-label">Make</label>
                                     <select name="make" id="make" class="form-control">
                                         <option value="Toyota">Toyota</option>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card bg-white">
                     <div class="card-header">
                         Photos
                     </div>
@@ -115,13 +115,15 @@
                             </div>
                             <div class="col-md-3">
                                 <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
+
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- card for seller info (name (dropdown), email, phone) -->
-                <div class="card mt-4">
+                <div class="card mt-4 bg-white">
                     <div class="card-header">
                         Seller Info
                     </div>
@@ -155,9 +157,7 @@
                     <button type="submit" class="btn btn-lg btn-success flex-grow-1">Save Listing</button>
 
                 </div>
-
             </div>
-
         </div>
     </div>
 

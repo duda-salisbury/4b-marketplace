@@ -1,5 +1,5 @@
 .badge {
-    border-radius: 0!important;
+  border-radius: 0 !important;
 }
 
 .filters {
@@ -14,20 +14,27 @@
 }
 
 .material-symbols-outlined {
-    position: relative;
-    bottom:-5px;
+  position: relative;
+  bottom: -5px;
 }
 
-h1, h2, h3, h4, h5, h5, h6, .badge {
-    font-family: 'Oswald', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+h6,
+.badge {
+  font-family: 'Oswald', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .badge {
-    font-size: 12px;
-    padding: 8px 15px;
-    font-weight: 400;
+  font-size: 12px;
+  padding: 8px 15px;
+  font-weight: 400;
 }
 
 .img-fill {
@@ -52,21 +59,21 @@ h1, h2, h3, h4, h5, h5, h6, .badge {
 
 /** make the card headers transparent and bump them up into the image */
 .vert-card .card-header {
-    background-color: transparent;
-    border-bottom: 0px;
-    position: relative;
-    top:-45px;
-    z-index: 1;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Oswald', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 18px;
-    color: #fff;
-    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-    /** collapse the bottom margin so the card body is flush with the image */
-    margin-bottom: -35px;
+  background-color: transparent;
+  border-bottom: 0px;
+  position: relative;
+  top: -45px;
+  z-index: 1;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Oswald', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  /** collapse the bottom margin so the card body is flush with the image */
+  margin-bottom: -35px;
 }
 
 .card-body {
@@ -75,193 +82,305 @@ h1, h2, h3, h4, h5, h5, h6, .badge {
   font-size: 16px;
 }
 
-.card-footer, .card-location {
-    letter-spacing: 0.5px;
-    font-weight: 200;
-    font-size:14px;
-    padding-bottom: 10px;
+.card-footer,
+.card-location {
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 /** when a card is hovered, make it subtly obvious */
 .card:hover {
-    box-shadow: 0px 0px 10px rgba(255,255,255,0.7);
-    transition: box-shadow 0.2s ease-in-out;
-    cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover h5 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 body {
-    background-color: #ebe6df;
-    font-size:14px;
-    font-family: 'Quattrocento', sans-serif;
-  }
-  
-  .navbar {
-    background-color: #d1c8bd;
-  }
-  
-  .navbar-brand {
-    color: #eeeeee;
-    font-size:24px;
-    font-family: "Yellowtail", cursive;
-    transition: color 0.2s ease-in-out;
-  }
+  background-color: #ebe6df;
+  font-size: 14px;
+  font-family: 'Red Hat Display', sans-serif;
+}
 
-  .navbar-brand:hover {
-    color: #eb6432;
-  }
-  
-  .nav-link {
-    color: #000; 
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size:18px;
-  }
+.navbar {
+  background-color: #d1c8bd;
+}
 
-  .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link{
-    color: #333;
-  }
+.navbar-brand {
+  color: #eeeeee;
+  font-size: 24px;
+  font-family: "Yellowtail", cursive;
+  transition: color 0.2s ease-in-out;
+}
 
-  .nav-link:hover {
-    color: #eb6432;
-  }
-  
-  .btn-primary {
-    background-color: #9f8b7d;
-    border-color: #9f8b7d;
-    color:#444;
-  }
-  
-  .btn-primary:hover {
-    background-color: #806a5e;
-    border-color: #806a5e;
-  }
-  
-  .card {
-    background-color: #f2eee7;
-    border-color: #d1c8bd;
-  }
-  
-  .card-title {
-    color: #4a4a4a;
-    overflow: hidden;
-  }
-  
-  .card-text {
-    color: #4a4a4a;
-  }
-  
-  .badge {
-    background-color:#332C13;
-  }
-  
-  .text-muted {
-    color: #7b7b7b;
-  }
+.navbar-brand:hover {
+  color: #bb5a5a;
+}
 
- 
+.nav-link {
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #bb5a5a;
+}
+
+.card {
+  background-color: #f2eee7;
+  border-color: #d1c8bd;
+}
+
+.card-title {
+  color: #332C13;
+  overflow: hidden;
+}
+
+.card-text {
+  color: #000;
+}
+
+.badge {
+  background-color: #332C13;
+}
+
+.fe-price {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: #7b7b7b;
+}
 
 
-  /* Badge Classes */
+
+
+/* Badge Classes */
 .bg-primary {
-    background-color: #eb6432!important;
-    color: #ffffff!important;
-  }
-  
-  .bg-success {
-    background-color: #5c826b!important;
-    color: #ffffff;
-  }
-  
-  .bg-error {
-    background-color: #bb5a5a!important;;
-    color: #ffffff;
-  }
-  
-  .bg-secondary {
-    background-color: #b7b5a5!important;;
-    color: #ffffff;
-  }
-  
-  .bg-alert {
-    background-color: #c8a95c!important;;
-    color: #ffffff;
-  }
+  background-color: #332C13 !important;
+  color: #ffffff !important;
+}
 
-  .bg-fe-dark {
-    background-color:#332C13;
-    color: #ffffff;
-  }
-  
-  /* Button Classes */
+.bg-success {
+  background-color: #5c826b !important;
+  color: #ffffff;
+}
 
-  .btn {
-    border-radius: 0!important;
-    font-family: 'Oswald', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-  
-  .btn-primary {
-    background-color: #eb6432;
-    border-color: #eb6432;
-    color: #ffffff;
-  }
+.bg-error {
+  background-color: #bb5a5a !important;
+  ;
+  color: #ffffff;
+}
 
-  .btn-outline-primary {
-    border-color: #eb6432;
-    color: #eb6432;
-  }
+.bg-secondary {
+  background-color: #b7b5a5 !important;
+  ;
+  color: #ffffff;
+}
 
-  .btn-outline-primary:hover {
-    background-color: #eb6432;
-    border-color: #eb6432;
-    color: #ffffff;
-  }
-  
-  .btn-success {
-    background-color: #5c826b;
-    border-color: #5c826b;
-    color: #ffffff;
-  }
-  
-  .btn-error {
-    background-color: #bb5a5a;
-    border-color: #bb5a5a;
-    color: #ffffff;
-  }
-  
-  .btn-secondary {
-    background-color:rgb(108, 117, 125);
-    border-color:rgb(108, 117, 125);
-    color: #fff;
-  }
+.bg-alert {
+  background-color: #c8a95c !important;
+  ;
+  color: #ffffff;
+}
 
-  .btn-outline-secondary {
-    border-color: #b7b5a5;
-    color:#fff;
-  }
+.bg-fe-dark {
+  background-color: #332C13;
+  color: #ffffff;
+}
 
-  .btn-outline-secondary:hover {
-    background-color:rgb(108, 117, 125);
-    border-color:rgb(108, 117, 125);
-    
-    color: #fff;
-  }
-  
-  .btn-alert {
-    background-color: #c8a95c;
-    border-color: #c8a95c;
-    color: #ffffff;
-  }
-  
+/* Button Classes */
 
-  .listing-results .badge {
-    font-size: 18px;
-    padding: 8px 15px;
-    font-weight: 400;
-  }
+.btn {
+  border-radius: 0 !important;
+  font-family: 'Oswald', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.btn-primary {
+  background-color: #332C13;
+  border-color: #332C13;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #473f21;
+  border-color: #473f21;
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  border-color: #332C13;
+  color: #332C13;
+}
+
+.btn-outline-primary:hover {
+  background-color: #473f21;
+  border-color: #473f21;
+  color: #ffffff;
+}
+
+.btn-success {
+  background-color: #5c826b;
+  border-color: #5c826b;
+  color: #ffffff;
+}
+
+.btn-error {
+  background-color: #bb5a5a;
+  border-color: #bb5a5a;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: rgb(108, 117, 125);
+  border-color: rgb(108, 117, 125);
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  border-color: #b7b5a5;
+  color: #fff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgb(108, 117, 125);
+  border-color: rgb(108, 117, 125);
+
+  color: #fff;
+}
+
+.btn-alert {
+  background-color: #c8a95c;
+  border-color: #c8a95c;
+  color: #ffffff;
+}
+
+
+.listing-results .badge {
+  font-size: 18px;
+  padding: 8px 15px;
+  font-weight: 400;
+}
+
+/** Gallery for V2 Laravel Project */
+.img-hero-hero,
+.hero-thumbs {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.img-hero-hero img {
+  cursor: pointer;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+  max-height: 600px;
+  width: 100%;
+  filter:brightness(80%);
+
+}
+
+.img-hero-hero, .hero-thumbs {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.thumb-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thumb-container {
+  max-height: 600px;
+}
+
+.thumb-container>a {
+  flex-grow: 1;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thumb-container>a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.img-hero a:hover, .img-hero-hero:hover img {
+  /** zoom in effect on hover **/
+  transform: scale(1.03);
+}
+
+.thumb-container .view-more {
+  position:relative;
+}
+
+.thumb-container .view-more::before {
+  content: 'All Photos';
+  position: absolute;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
+}
+
+.thumb-container .view-more:hover::before {
+ 
+}
+
+
+/** Breadcrumb */
+
+.breadcrumb-item {
+  font-size:16px;
+}
+
+.breadcrumb-item a {
+  position: relative;
+  color:#332C13;
+ 
+  z-index: 0;
+  text-decoration: underline;
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+
+.breadcrumb-item a:hover::before {
+  width: 100%; /* Slide-in effect on hover */
+}
+
+.breadcrumb-item a:hover {
+ color:#bb5a5a;
+}
+
+

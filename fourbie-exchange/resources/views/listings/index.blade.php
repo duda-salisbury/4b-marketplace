@@ -70,7 +70,7 @@
                                 <div class="position-relative">
 
                                     <!-- Select Model -->
-                                    <div class="select-filter model-filter">
+                                    <div class="select-filter model-filter my-3">
                                         <div class="form-group" id="listingfilter-model-formgroup">
                                             <label name="model" for="listingfilter-model"
                                                 class="form-label">Models</label>
@@ -102,17 +102,17 @@
 
 
                                 <!-- min price -->
-                                <label class="form-label" for="listingfilter-price_min">Min Price</label>
+                                <label class="form-label mt-3" for="listingfilter-price_min">Min Price</label>
                                 <input type="number" id="listingfilter-price_min" name="price_min" class="form-control"
                                     min="0" max="1850000" placeholder="$0" />
 
                                 <!-- max price -->
-                                <label class="form-label" for="listingfilter-price_max">Max Price</label>
+                                <label class="form-label mt-3" for="listingfilter-price_max">Max Price</label>
                                 <input type="number" id="listingfilter-price_max" name="price_max" class="form-control"
                                     min="0" max="1850000" placeholder="$1850000" />
 
                                 <!-- Transmission Type -->
-                                <div class="mt-4 filter-group">
+                                <div class="mt-4 filter-group mt-3">
                                     <div class="form-label">Transmission</div>
                                     <div class="form-check">
                                         <input type="checkbox" name="transmission_type[]"

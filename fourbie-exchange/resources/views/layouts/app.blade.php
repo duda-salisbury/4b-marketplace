@@ -14,8 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- oswald font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap">
-    <!-- Quattrocento font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap">
+    <!-- Red Hat Display font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap">
     <!-- font yellowtail -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap">
     <!-- bs icons -->
@@ -38,7 +38,16 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Listings</a>
+                        <a class="nav-link" href="/listings">Listings</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('listings.create') }}">Create Listing</a>
+                    </li>
+
+                    <!-- single listing -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
                     </li>
 
                     <li class="nav-item">
