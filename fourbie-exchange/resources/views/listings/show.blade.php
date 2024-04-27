@@ -71,6 +71,18 @@
 
         <div class="row mt-4">
             <div class="col-md-8">
+                <div class="fe-VehicleSpecs my-4 bg-white">
+                    <ul class="list-group d-flex ">
+                        <li class="list-group-item">Year: 1973</li>
+                        <li class="list-group-item">Make: Jeep</li>
+                        <li class="list-group-item">Model: Wrangler</li>
+                        <li class="list-group-item">Mileage: 100,000</li>
+                        <li class="list-group-item">Transmission: Manual</li>
+                        <li class="list-group-item">Engine: 4.2L Inline 6</li>
+                        <li class="list-group-item">Drivetrain: 4x4</li>
+                    </ul>
+                </div>
+
                 <div class="card bg-white">
                     <div class="card-header">
                         Description
@@ -94,17 +106,6 @@
             </div>
             <div class="col-md-4">
 
-                <div class="fe-VehicleSpecs">
-                    <ul class="list-group">
-                        <li class="list-group-item">Year: 1973</li>
-                        <li class="list-group-item">Make: Jeep</li>
-                        <li class="list-group-item">Model: Wrangler</li>
-                        <li class="list-group-item">Mileage: 100,000</li>
-                        <li class="list-group-item">Transmission: Manual</li>
-                        <li class="list-group-item">Engine: 4.2L Inline 6</li>
-                        <li class="list-group-item">Drivetrain: 4x4</li>
-                    </ul>
-                </div>
 
                 <div class="card my-4 seller-info">
                     <div class="card-body">
