@@ -322,8 +322,8 @@
                                 <div>
                                     <div class="select-filter">
                                         <div class="form-group" style="display: flex;align-items: center;">
-                                            <select style="padding-right:35px;" name="sortby" id="sortby" onchange="fourbie_select_sort_option(this);" class="form-control dense">
-                                                                                        <option value="date_desc">Newly Listed</option>
+                                            <select style="padding-right:35px;" name="sortby" id="sortby" onchange="fourbie_select_sort_option(this);" class="form-select dense">
+                                                <option value="date_desc">Newly Listed</option>
                                                 <option value="date_asc">Oldest Listings</option>
                                                 <option value="price_asc">Price (Low to High)</option>
                                                 <option value="price_desc">Price (High to Low)</option>
