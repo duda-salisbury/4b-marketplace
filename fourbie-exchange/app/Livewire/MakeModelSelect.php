@@ -19,7 +19,9 @@ class MakeModelSelect extends Component
     public function mount()
     {
         $this->makes = VehicleMake::orderBy('name')->get();
-        $this->models = collect();
+        $this->models = old('vehicle_make_id') ? VehicleMake::find(old('vehicle_make_id'))->models : collect();
+        $this->vehicle_make_id = old('vehicle_make_id');
+        $this->vehicle_model_id = old('vehicle_model_id');
     }
 
     public function selectMake()

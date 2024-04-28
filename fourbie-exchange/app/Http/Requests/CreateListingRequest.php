@@ -24,6 +24,7 @@ class CreateListingRequest extends FormRequest
         return [
             'status' => 'in:draft,publish',
             'content' => 'string|nullable',
+            'excerpt' => 'string|nullable',
             'type' => 'in:listing,premium',
             'external_url' => 'url|nullable',
 

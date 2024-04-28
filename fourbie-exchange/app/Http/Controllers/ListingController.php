@@ -29,12 +29,13 @@ class ListingController extends Controller
 
         $dealer = Dealer::find($request->dealer_id);
         if ( !$request->input('dealer_id') ) {
-            $dealer = new Dealer;
+            $dealer = Dealer::firstOrNew(['email' => $request->email]);
             $dealer->name = $request->name;
             $dealer->phone = $request->phone;
             $dealer->email = $request->email;
             $dealer->city = $request->city;
             $dealer->state = $request->state;
+            $dealer->zip = $request->zip;
             $dealer->save();
         }
         $l->dealer()->associate($dealer);

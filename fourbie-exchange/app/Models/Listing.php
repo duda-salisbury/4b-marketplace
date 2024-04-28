@@ -86,7 +86,7 @@ class Listing extends Model
     public function afterInitialize() {
         $this->title = $this->generateTitle();
         $this->slug = $this->generateSlug();
-        $this->excerpt = $this->generateExcerpt();
+        // $this->excerpt = $this->generateExcerpt();
     }
 
     /**

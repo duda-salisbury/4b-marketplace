@@ -32,7 +32,7 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 mb-3 me-2" style="width: 100px;">
                                             <label for="model_year" class="form-label">Year</label>
-                                            <input type="text" name="model_year" id="model_year" class="form-control">
+                                            <input type="text" name="model_year" id="model_year" class="form-control" value="{{ old('model_year') }}">
                                         </div>
 
                                         <livewire:make-model-select />
@@ -131,7 +131,7 @@
                                     <!-- excerpt -->
                                     <div class="mb-3">
                                         <label for="excerpt" class="form-label">Excerpt</label>
-                                        <textarea name="content" id="excerpt" class="form-control">{{ old('content') }}</textarea>
+                                        <textarea name="excerpt" id="excerpt" class="form-control">{{ old('content') }}</textarea>
                                     </div>
                             </div>
                         </div>
@@ -297,7 +297,7 @@
                                 </div>
 
 
-                                <textarea name="description" id="description" rows="12" class="form-control"></textarea>
+                                <textarea name="content" id="description" rows="12" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
