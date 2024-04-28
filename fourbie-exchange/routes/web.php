@@ -32,6 +32,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+/** sellers/create */
+Route::get('/sellers/create', function () {
+    return view('sellers.create');
+})->name('sellers.create');
+
+/** sellers/index */
+Route::get('/sellers', function () {
+    $sellers = \App\Models\Dealer::paginate(50);
+    return view('sellers.index')->with('sellers', $sellers);
+})->name('sellers');
 
 
 

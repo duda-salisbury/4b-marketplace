@@ -24,7 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
 </head>
 
-<body>
+<body class="bg-dark">
 
     <nav class="navbar fixed-top navbar-expand-lg bg-white">
         <div class="container">
@@ -48,6 +48,16 @@
                     <!-- single listing -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
+                    </li>
+
+                    <!-- create seller -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('sellers.create')}}">Create Seller</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('sellers')}}">All Sellers</a>
                     </li>
 
                     <li class="nav-item">
