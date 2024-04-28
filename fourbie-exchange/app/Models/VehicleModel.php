@@ -11,6 +11,6 @@ class VehicleModel extends Model
 
     public function make()
     {
-        return $this->belongsTo(VehicleMake::class);
+        return $this->belongsTo(VehicleMake::class, 'vehicle_make_id');
     }
 }

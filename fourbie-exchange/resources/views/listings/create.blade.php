@@ -35,23 +35,7 @@
                                             <input type="text" name="model_year" id="model_year" class="form-control">
                                         </div>
 
-                                        <div class="flex-grow-2 mb-3 me-2">
-                                            <label for="vehicle_make" class="form-label">Make</label>
-                                            <select name="vehicle_make" id="vehicle_make" class="form-select">
-                                                @foreach($makes as $make)
-                                                    <option value="{{ $make->id }}" @selected(old('vehicle_make') === $make->id)>{{ $make->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-                                        <div class="flex-grow-1 mb-3">
-                                            <label for="vehicle_model" class="form-label">Model</label>
-                                            <select name="vehicle_model" id="vehicle_model" class="form-select">
-                                                @foreach($models as $model)
-                                                    <option value="{{ $model->id }}" @selected(old('vehicle_model') === $model->id)>{{ $model->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <livewire:make-model-select />
 
                                         <div class="flex-shrink-0 ms-2">
                                             <label for="price" class="form-label">Price</label>
@@ -111,7 +95,7 @@
 
                                     <div class="d-flex">
 
-                                        <div class="mb-3">
+                                        <div class="mb-3 flex-grow-1">
                                             <label for="vin" class="form-label">VIN/Chassis #</label>
                                             <input type="text" name="vin" id="vin" class="form-control" value="{{ old('vin') }}">
                                         </div>

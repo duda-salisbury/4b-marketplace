@@ -13,15 +13,24 @@ class ListingController extends Controller
 {
 
     public function create() {
-        $makes = VehicleMake::all();
-        $models = VehicleModel::all();
-        $types = VehicleType::all();
-
-        return view('listings.create', compact('makes', 'models', 'types'));
+        return view('listings.create');
     }
 
     public function submitCreate(CreateListingRequest $request) {
-        Listing::create($request->validated());
+        $l = new Listing;
+        $l->fill($request->validated());
+
+        if ( $request->has('vehicle_make_id') ) {
+            $make = VehicleMake::find($request->vehicle_make_id);
+            $l->make()->associate($make);
+        }
+
+        if ( $request->has('vehicle_model_id') ) {
+            $model = VehicleModel::find($request->vehicle_model_id);
+            $l->model()->associate($model);
+        }
+
+        $l->save();
 
         return redirect()->route('listings')->with('success', 'Listing created successfully');
     }

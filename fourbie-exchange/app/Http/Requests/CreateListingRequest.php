@@ -11,7 +11,7 @@ class CreateListingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,8 @@ class CreateListingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'slug' => 'required|unique:listings|string|max:255',
             'status' => 'in:draft,publish',
             'content' => 'string|nullable',
-            'excerpt' => 'string|nullable',
             'type' => 'in:listing,featured',
             'external_url' => 'url|nullable',
             'city' => 'string|nullable',
@@ -44,8 +41,8 @@ class CreateListingRequest extends FormRequest
             'title_status' => 'string|nullable',
             'vin' => 'string|nullable',
             'dealer_id' => 'exists:dealers,id|nullable',
-            'vehicle_make_id' => 'exists:vehicle_makes,id|nullable',
-            'vehicle_model_id' => 'exists:vehicle_models,id|nullable',
+            'vehicle_make_id' => 'required|exists:vehicle_makes,id',
+            'vehicle_model_id' => 'required|exists:vehicle_models,id',
             // 'vehicle_type_id' => 'exists:vehicle_types,id|nullable',
             'image_id' => 'exists:images,id|nullable',
             'seller_id' => 'exists:users,id|nullable'
