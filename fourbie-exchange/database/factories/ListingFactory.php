@@ -60,7 +60,7 @@ class ListingFactory extends Factory
             'transmission' => fake()->randomElement(['automatic', 'manual']),
             'fuel_type' => fake()->randomElement(['gasoline', 'diesel', 'electric']),
             'engine' => fake()->randomElement(['v6', 'v8', 'v12']),
-            'drivetrain' => fake()->randomElement(['awd', 'fwd', 'rwd']),
+            'drivetrain' => fake()->randomElement(['awd', '4x4', '4x2']),
             'body_style' => fake()->randomElement(['sedan', 'coupe', 'suv', 'truck', 'van']),
             'title_status' => fake()->randomElement(['clean', 'salvage', 'rebuilt']),
             'vin' => fake()->regexify('[A-Z0-9]{17}'),

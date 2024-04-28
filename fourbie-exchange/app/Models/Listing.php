@@ -33,6 +33,10 @@ class Listing extends Model
 
     public function image()
     {
-        return $this->belongsTo(Image::class, 'image_id');
+        return $this->hasOne(Upload::class, 'image_id');
+    }
+
+    public function carfax() {
+        return $this->hasOne(Upload::class, 'carfax_id');
     }
 }

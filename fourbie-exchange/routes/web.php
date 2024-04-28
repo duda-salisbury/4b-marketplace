@@ -21,9 +21,8 @@ Route::get('/listings/show', function () {
     return view('listings.show');
 })->name('listings.show');
 
-Route::get('/listings/create', function () {
-    return view('listings.create');
-})->name('listings.create');
+Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
+Route::post('/listings/create', [ListingController::class, 'submitCreate'])->name('listings.submitCreate');
 
 Route::get('/listings/edit', function ($listing) {
     return view('listings.edit', ['listing' => $listing]);

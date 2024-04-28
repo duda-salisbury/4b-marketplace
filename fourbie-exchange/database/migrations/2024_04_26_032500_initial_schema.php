@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('vehicle_makes', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
 
@@ -24,17 +24,18 @@ return new class extends Migration
             $table->id();
             $table->foreignId('vehicle_make_id')->constrained()->onDelete('cascade');
             $table->string('name')->index();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->timestamps();
         });
 
-        // Create Images
-        Schema::create('images', function (Blueprint $table) {
+        // Create Uploads
+        Schema::create('uploads', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index();
             $table->string('slug')->unique();
             $table->string('path')->nullable();
             $table->integer('size')->nullable();
+            $table->string('mime')->nullable();
             $table->string('original_name')->nullable();
             $table->string('url');
             $table->timestamps();
@@ -86,7 +87,8 @@ return new class extends Migration
             $table->foreignId('vehicle_type_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('dealer_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('syndication_source_id')->nullable()->constrained()->onDelete('set null');
-            $table->foreignId('image_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('image_id')->nullable()->constrained('uploads')->onDelete('set null');
+            $table->string('carfax_id')->nullable()->constrained('uploads')->onDelete('set null');
             $table->foreignId('seller_id')->nullable()->constrained('users')->onDelete('set null');
             $table->string('city')->nullable();
             $table->string('state')->nullable();
