@@ -27,7 +27,7 @@
                     @foreach($listings as $listing)
                     <tr>
                         <td>{{ $listing->id }}</td>
-                        <td>{{ $listing->title }}</td>
+                        <td><a href="{{ route('admin.listings.show', $listing) }}">{{ $listing->title }}</a></td>
                         <td><span @class(['badge', 'text-bg-warning' => $listing->status === 'draft', 'text-bg-success' => $listing->status === 'publish'])>{{ Str::ucfirst($listing->status) }}</span></td>
                         <td>${{ Number::format($listing->price) }}</td>
                         <td>{{ $listing->created_at->format('m/d/Y') }}</td>

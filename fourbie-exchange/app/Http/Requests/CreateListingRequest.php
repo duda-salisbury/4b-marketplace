@@ -24,10 +24,17 @@ class CreateListingRequest extends FormRequest
         return [
             'status' => 'in:draft,publish',
             'content' => 'string|nullable',
-            'type' => 'in:listing,featured',
+            'type' => 'in:listing,premium',
             'external_url' => 'url|nullable',
-            'city' => 'string|nullable',
-            'state' => 'string|nullable',
+
+            // Validate all of the seller/dealer info.  We only need this if the dealer_id is not set
+            'name' => 'required_without:dealer_id|string|nullable',
+            'phone' => 'required_without:dealer_id|string|nullable',
+            'email' => 'required_without:dealer_id|email|nullable',
+            'city' => 'required_without:dealer_id|string|nullable',
+            'state' => 'required_without:dealer_id|string|nullable',
+            'zip' => 'required_without:dealer_id|string|nullable',
+
             'price' => 'numeric|nullable',
             'odometer' => 'numeric|nullable',
             'model_year' => 'numeric',

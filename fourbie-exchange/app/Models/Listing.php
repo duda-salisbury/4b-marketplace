@@ -59,6 +59,10 @@ class Listing extends Model
         return $this->hasOne(Upload::class, 'carfax_id');
     }
 
+    public function dealer() {
+        return $this->belongsTo(Dealer::class, 'dealer_id');
+    }
+
 
     /**
      * Property Helpers

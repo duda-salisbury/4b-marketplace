@@ -41,4 +41,5 @@ Route::get('/contact', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
+    Route::get('/listings/{id}', [ListingController::class, 'adminShow'])->name('admin.listings.show');
 });

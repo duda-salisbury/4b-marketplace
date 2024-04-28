@@ -5,7 +5,7 @@
 @section('content')
     <div class="bg-dark py-5">
         <div class="container pt-4">
-            <h1 class="text-white">Create Listing</h1>
+            <h1 class="text-white mb-4">Create Listing</h1>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -21,7 +21,7 @@
                 @csrf
 
                 <div class="row">
-                    <div class="col-md-6 my-4">
+                    <div class="col-md-6 mb-4">
                         <div class="card bg-white">
                             <div class="card-header">
                                 Listing Information
@@ -45,8 +45,6 @@
 
 
                                     <div class="d-flex">
-
-
                                         <!-- odometer -->
                                         <div class="mb-3">
                                             <label for="odometer" class="form-label">Odometer</label>
@@ -58,11 +56,9 @@
                                             <label for="engine" class="form-label">Engine</label>
                                             <input type="text" name="engine" id="engine" class="form-control" value="{{ old('engine') }}">
                                         </div>
-
                                     </div>
 
                                     <div class="d-flex">
-
                                         <!-- fuel type -->
                                         <div class="mb-3 flex-grow-1">
                                             <label for="fuelType" class="form-label">Fuel Type</label>
@@ -135,7 +131,7 @@
                                     <!-- excerpt -->
                                     <div class="mb-3">
                                         <label for="excerpt" class="form-label">Excerpt</label>
-                                        <textarea name="excerpt" id="excerpt" class="form-control">{{ old('excerpt') }}</textarea>
+                                        <textarea name="content" id="excerpt" class="form-control">{{ old('content') }}</textarea>
                                     </div>
                             </div>
                         </div>
@@ -153,7 +149,7 @@
                                 <!-- radio buttons for listing type -->
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="listingType" id="standard"
-                                        value="standard" checked>
+                                        value="listing" checked>
                                     <label class="form-check-label" for="standard">
                                         Standard
                                     </label>
@@ -162,8 +158,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="listingType" id="premium"
                                         value="premium">
-                                    <label class="form-check-label" for="premium">Premium
-                                    </label>
+                                    <label class="form-check-label" for="premium">Premium</label>
                                 </div>
 
 
@@ -178,7 +173,7 @@
                             </div>
                             <div class="card-body">
 
-
+                                    <livewire:seller-select-create />
                                     {{-- <div class="mb-3">
                                         <label for="sellerType" class="form-label">Seller Type</label>
                                         <select name="sellerType" id="sellerType" class="form-select">
@@ -187,7 +182,7 @@
                                         </select>
                                     </div> --}}
 
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="name" class="form-label">Seller</label>
                                         <select name="name" id="name" class="form-select">
                                             <option value="Private Party">Private Party</option>
@@ -229,7 +224,7 @@
                                             <label for="zip" class="form-label">Zip</label>
                                             <input type="text" name="zip" id="zip" class="form-control">
                                         </div>
-                                    </div>
+                                    </div> --}}
                             </div>
                         </div>
 
