@@ -121,11 +121,13 @@
                                         </select>
                                     </div>
 
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <!-- Carfax Upload -->
                                         <label for="carfax" class="form-label">Carfax</label>
                                         <input type="file" name="carfax" id="carfax" class="form-control">
-                                    </div>
+                                    </div> --}}
+
+                                    <livewire:upload-carfax />
 
 
                                     <!-- excerpt -->

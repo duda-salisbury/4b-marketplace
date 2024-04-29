@@ -7,6 +7,9 @@ use Illuminate\Support\Str;
 
 class Dealer extends Model
 {
+
+    protected $fillable = ['email'];
+
     public function listings()
     {
         return $this->hasMany(Listing::class);

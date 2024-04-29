@@ -17,9 +17,9 @@ class ListingController extends Controller
         return view('listings.create');
     }
 
-    public function submitCreate(CreateListingRequest $request) {
+    public function submitCreate(CreateListingRequest $request) {        
         $l = new Listing;
-        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip']));
+        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip', 'carfax_upload_id']));
 
         $make = VehicleMake::find($request->vehicle_make_id);
         $l->make()->associate($make);
@@ -39,6 +39,10 @@ class ListingController extends Controller
             $dealer->save();
         }
         $l->dealer()->associate($dealer);
+
+        if ( $request->has('carfax_upload_id') ) {
+            $l->carfax_id = $request->carfax_upload_id;
+        }
 
         $l->save();
 
