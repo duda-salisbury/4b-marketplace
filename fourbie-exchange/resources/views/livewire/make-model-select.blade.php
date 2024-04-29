@@ -11,9 +11,7 @@
     <div class="flex-grow-1 mb-3">
         <label for="vehicle_model_id" class="form-label">Model</label>
         <select name="vehicle_model_id" id="vehicle_model_id" class="form-select" wire:model.live="vehicle_model_id" wire:key="{{ $vehicle_make_id }}">
-            @if (empty($vehicle_make_id) || empty($models))
-                <option value="">Select a make first</option>
-            @endif
+            <option value="">No Model Selected</option>
             @foreach($models as $model)
                 <option value="{{ $model->id }}" @selected($vehicle_model_id === $model->id)>{{ $model->name }}</option>
             @endforeach

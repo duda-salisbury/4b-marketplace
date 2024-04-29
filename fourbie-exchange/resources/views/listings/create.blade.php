@@ -176,57 +176,7 @@
                             <div class="card-body">
 
                                     <livewire:seller-select-create />
-                                    {{-- <div class="mb-3">
-                                        <label for="sellerType" class="form-label">Seller Type</label>
-                                        <select name="sellerType" id="sellerType" class="form-select">
-                                            <option value="private">Private Seller</option>
-                                            <option value="dealer">Dealer</option>
-                                        </select>
-                                    </div> --}}
-
-                                    {{-- <div class="mb-3">
-                                        <label for="name" class="form-label">Seller</label>
-                                        <select name="name" id="name" class="form-select">
-                                            <option value="Private Party">Private Party</option>
-                                            <option value="ABC Motors">ABC Motors</option>
-                                            <option value="XYZ Autos">XYZ Autos</option>
-                                            <option value="123 Cars">123 Cars</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input value="sup@privateparty.com" type="email" name="email" id="email"
-                                            class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="phone" class="form-label">Phone</label>
-                                        <input value="888-888-8888" type="text" name="phone" id="phone"
-                                            class="form-control">
-                                    </div>
-
-
-                                    <div class="d-flex">
-
-                                        <div class="mb-3 flex-grow-1">
-                                            <label for="city" class="form-label">City</label>
-                                            <input type="text" name="city" id="city" class="form-control">
-                                        </div>
-                                        <div class="mb-3 flex-grow-1 ms-2">
-                                            <label for="state" class="form-label">State</label>
-                                            <select name="state" id="state" class="form-select">
-                                                <option value="AL">Alabama</option>
-                                                <option value="AK">Alaska</option>
-                                                <option value="AZ">Arizona</option>
-                                                <option value="AR">Arkansas</option>
-                                                <option value="CA">California</option>
-                                                <!-- Add more options for other states -->
-                                            </select>
-                                        </div>
-                                        <div class="mb-3 flex-grow-1 ms-2">
-                                            <label for="zip" class="form-label">Zip</label>
-                                            <input type="text" name="zip" id="zip" class="form-control">
-                                        </div>
-                                    </div> --}}
+                                   
                             </div>
                         </div>
 
@@ -242,24 +192,7 @@
                             </div>
                             <div class="card-body">
 
-                                <label for="photos" class="form-label">Photo Gallery</label>
-                                <input type="file" name="photos" id="photos[]" class="form-control">
-
-                                <div class="row mt-4">
-                                    <div class="col-md-3">
-                                        <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
-
-                                    </div>
-                                </div>
+                               <livewire:gallery-select />
 
                                 <!-- hero image (for premium listings) -->
 

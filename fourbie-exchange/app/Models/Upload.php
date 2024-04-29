@@ -37,7 +37,7 @@ class Upload extends Model
         $upload->size = $file->getSize();
         $upload->mime = $file->getMimeType();
         $upload->original_name = $file->getClientOriginalName();
-        $upload->url = url('uploads').'/'.$file_name;
+        $upload->url = Storage::url('public/uploads/' . $file_name);
         $upload->save();
 
         return $upload;

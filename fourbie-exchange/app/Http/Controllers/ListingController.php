@@ -19,14 +19,16 @@ class ListingController extends Controller
 
     public function submitCreate(CreateListingRequest $request) {        
         $l = new Listing;
-        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip', 'carfax_upload_id']));
+        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip', 'carfax_upload_id', 'photo_id']));
 
         $make = VehicleMake::find($request->vehicle_make_id);
         $l->make()->associate($make);
 
-        $model = VehicleModel::find($request->vehicle_model_id);
-        $l->model()->associate($model);
-
+        if ( $request->has('vehicle_model_id') ) {
+            $model = VehicleModel::find($request->vehicle_model_id);
+            $l->model()->associate($model);
+        }
+        
         $dealer = Dealer::find($request->dealer_id);
         if ( !$request->input('dealer_id') ) {
             $dealer = Dealer::firstOrNew(['email' => $request->email]);
@@ -46,6 +48,14 @@ class ListingController extends Controller
 
         $l->save();
 
+        // Add Gallery Images
+        if ( $request->input('photo_id') && count($request->photo_id) > 0 ) {
+            $createMany = array_map(function($photo_id) {
+                return ['image_id' => $photo_id];
+            }, $request->photo_id);
+            $l->listing_images()->createMany($createMany);
+        }
+
         return redirect()->route('listings')->with('success', 'Listing created successfully');
     }
 
@@ -56,7 +66,7 @@ class ListingController extends Controller
     }
 
     public function adminShow($id) {
-        $listing = Listing::with(['make', 'model', 'dealer'])->findOrFail($id);
+        $listing = Listing::with(['make', 'model', 'dealer', 'images'])->findOrFail($id);
 
         return view('listings.admin.show', compact('listing'));
     }
