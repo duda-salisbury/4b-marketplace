@@ -1,10 +1,10 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('title', 'Listing Details')
 
 @section('content')
     <div class="container mt-5 pt-3">
-        <nav id="single-breadcrumb" aria-label="breadcrumb" class="my-3">
+        <nav id="single-breadcrumb" aria-label="breadcrumb" class="mt-5">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
 
@@ -49,21 +49,37 @@
             </div>
         </div>
 
+
+                <ul class="nav nav-tabs">
+                    <!-- back to listing -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/listings/show">
+                            <!-- left arrow bootstrap icon -->
+                            Vehicle Overview
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listings/media">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/listings/media">Videos</a>
+                    </li>
+                </ul>
         <div class="row img-hero d-none d-md-flex pt-3">
             <div class="col-md-9 img-hero-hero">
-                <a href="/listings/show/media#1">
+                <a href="/listings/media">
                     <img src="https://fourbieexchange.com/wp-content/uploads/2024/04/1945-willys-jeep-cj-2a-5.jpg"
                         class="img-fluid" alt="1945-willys-jeep-cj-2a (5)">
                 </a>
             </div>
             <div class="col-md-3 hero-thumbs">
                 <div class="thumb-container">
-                    <a href="/listings/show/media#2">
+                    <a href="/listings/media">
                         <img src="https://fourbieexchange.com/wp-content/uploads/2024/04/1945-willys-jeep-cj-2a-1.jpg"
                             class="img-fluid" alt="1945-willys-jeep-cj-2a (1)">
                     </a>
 
-                    <a class="view-more" href="/listings/show/media#3">
+                    <a class="view-more" href="/listings/media">
                         <img src="https://fourbieexchange.com/wp-content/uploads/2024/04/1945-willys-jeep-cj-2a.jpg"
                             class="img-fluid" alt="1945-willys-jeep-cj-2a">
                     </a>
@@ -243,3 +259,5 @@
 
             </div>
         </div>
+    </div>
+@endsection

@@ -21,6 +21,10 @@ Route::get('/listings/show', function () {
     return view('listings.show');
 })->name('listings.show');
 
+Route::get('/listings/media', function () {
+    return view('listings.media');
+})->name('listings.media');
+
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 Route::post('/listings/create', [ListingController::class, 'submitCreate'])->name('listings.submitCreate');
 

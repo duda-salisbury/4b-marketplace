@@ -249,6 +249,13 @@ white-space: nowrap;
   font-weight: 700;
 }
 
+.nav-tabs .nav-item a{
+  border-radius: 0px!important;
+  color:#fff;
+}
+.nav-tabs .active {
+  color: #040314!important;
+}
 
 /* Badge Classes */
 .bg-primary {
