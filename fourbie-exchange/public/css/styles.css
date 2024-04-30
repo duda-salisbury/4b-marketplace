@@ -442,9 +442,7 @@ white-space: nowrap;
   transition: 0.5s;
 }
 
-.thumb-container .view-more:hover::before {
- 
-}
+
 
 
 /** Breadcrumb */

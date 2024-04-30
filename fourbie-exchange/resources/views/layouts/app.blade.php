@@ -10,6 +10,9 @@
     <link rel="icon" href="fourbie_circle.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    @yield('styles')
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- oswald font -->
@@ -93,6 +96,8 @@
 
     <!-- Bootstrap 5.3 JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    @yield('scripts')
 
 </body>
 
