@@ -290,23 +290,56 @@
                             <div class="card-header">
                                 Description
                             </div>
-                            <div class="card-body description-editor">
-                                <!-- markdown toolbar -->
-                                <div class="btn-group mb-3">
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('**','**')"><i class="bi bi-type-bold"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('*','*')"><i class="bi bi-type-italic"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('# ','')"><i class="bi bi-type-h2"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('## ','')"><i class="bi bi-type-h3"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('### ','')"><i class="bi bi-type-h4"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('[Link Text](url)','')"><i class="bi bi-link"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('- ','')"><i class="bi bi-list-ul"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('> ','')"><i class="bi bi-chat-quote"></i></button>
-                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('```','\n```')"><i class="bi bi-code"></i></button>
-                              
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="editor-tab" data-bs-toggle="tab"
+                                        data-bs-target="#editor" type="button" role="tab" aria-controls="editor"
+                                        aria-selected="true">Editor</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="preview-tab" data-bs-toggle="tab"
+                                        data-bs-target="#preview" type="button" role="tab" aria-controls="preview"
+                                        aria-selected="false">Preview</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="editor" role="tabpanel"
+                                    aria-labelledby="editor-tab">
+                                    <div class="card-body description-editor">
+                                        <!-- markdown toolbar -->
+                                        <div class="btn-group mb-3">
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('**','**')"><i
+                                                    class="bi bi-type-bold"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('*','*')"><i
+                                                    class="bi bi-type-italic"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('# ','')"><i class="bi bi-type-h2"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('## ','')"><i class="bi bi-type-h3"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('### ','')"><i class="bi bi-type-h4"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('[Link Text](url)','')"><i
+                                                    class="bi bi-link"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('- ','')"><i class="bi bi-list-ul"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('> ','')"><i
+                                                    class="bi bi-chat-quote"></i></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="insertMarkdown('```','\n```')"><i
+                                                    class="bi bi-code"></i></button>
+                                        </div>
+                                        <textarea name="content" id="description" rows="12" class="form-control"></textarea>
+                                    </div>
                                 </div>
-
-
-                                <textarea name="content" id="description" rows="12" class="form-control"></textarea>
+                                <div class="tab-pane fade" id="preview" role="tabpanel" aria-labelledby="preview-tab">
+                                    <div class="card-body">
+                                        <div id="previewContent"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -324,6 +357,8 @@
 @endsection
 
 @section('scripts')
+
+
     <script src="{{ asset('js/listing-create.js') }}"></script>
     <script src="{{ asset('js/markdown-editor.js') }}"></script>
 
