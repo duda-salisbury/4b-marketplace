@@ -3,33 +3,7 @@
 @section('title', 'Create Listing')
 
 @section('styles')
-    <style>
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .draggable-image {
-            width: 150px;
-            height: 150px;
-            cursor: grab;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .dragover {
-            border: 2px dashed #333;
-        }
-
-        .dragstart {
-            opacity: 0.8;
-        }
-
-        .draggable-image.dragover {
-            transform: translateX(80px);
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/admin/listing-create.css') }}">
 @endsection
 
 @section('content')
@@ -316,25 +290,19 @@
                             <div class="card-header">
                                 Description
                             </div>
-                            <div class="card-body">
+                            <div class="card-body description-editor">
                                 <!-- markdown toolbar -->
                                 <div class="btn-group mb-3">
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-type-bold"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-type-italic"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-type-h2"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-type-h3"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-type-h4"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="bi bi-link"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-list-ul"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i
-                                            class="bi bi-chat-quote"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="bi bi-code"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('**','**')"><i class="bi bi-type-bold"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('*','*')"><i class="bi bi-type-italic"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('# ','')"><i class="bi bi-type-h2"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('## ','')"><i class="bi bi-type-h3"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('### ','')"><i class="bi bi-type-h4"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('[Link Text](url)','')"><i class="bi bi-link"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('- ','')"><i class="bi bi-list-ul"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('> ','')"><i class="bi bi-chat-quote"></i></button>
+                                    <button type="button" class="btn btn-secondary" onclick="insertMarkdown('```','\n```')"><i class="bi bi-code"></i></button>
+                              
                                 </div>
 
 
@@ -356,52 +324,7 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const imageContainer = document.getElementById("imageContainer");
+    <script src="{{ asset('js/listing-create.js') }}"></script>
+    <script src="{{ asset('js/markdown-editor.js') }}"></script>
 
-        imageContainer.addEventListener("dragstart", function(event) {
-            // set imageContainer as the dropzone by adding .dropzone class
-            imageContainer.classList.add("dragstart");
-            event.dataTransfer.setData("text/plain", event.target.id);
-        });
-
-        imageContainer.addEventListener("dragover", function(event) {
-            imageContainer.classList.add("dragover");
-            event.preventDefault();
-        });
-
-        imageContainer.addEventListener("drop", function(event) {
-            event.preventDefault();
-            const id = event.dataTransfer.getData("text/plain");
-            const draggedElement = document.getElementById(id);
-            const dropzone = event.target.closest(".draggable-image");
-
-            // remove dragover class
-            imageContainer.classList.remove("dragover");
-            imageContainer.classList.remove("dragstart");
-
-            // remove dragover class from all images
-            const draggableImages = document.querySelectorAll(".draggable-image");
-            draggableImages.forEach(function(image) {
-                image.classList.remove("dragover");
-            });
-
-            if (dropzone && draggedElement) {
-                dropzone.parentNode.insertBefore(draggedElement, dropzone);
-            }
-        });
-
-        // for each image, add a class if it's being dragged over
-        const draggableImages = document.querySelectorAll(".draggable-image");
-        draggableImages.forEach(function(image) {
-            image.addEventListener("dragover", function(event) {
-                image.classList.add("dragover");
-                event.preventDefault();
-            });
-
-            image.addEventListener("dragleave", function(event) {
-                image.classList.remove("dragover");
-            });
-        });
-    </script>
 @endsection
