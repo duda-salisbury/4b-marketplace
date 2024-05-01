@@ -67,11 +67,17 @@
                         Account
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-                        <li><a class="dropdown-item" href="#">Register/Login</a></li>
-                        <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li><a class="dropdown-item" href="#">My Classifieds</a></li>
-                        <li><a class="dropdown-item" href="#">My Messages</a></li>
-                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        @if ( !Auth::check() )
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        @endif
+
+                        @if ( Auth::check() )
+                            <li><h6 class="dropdown-header">Welcome {{ Auth::user()->name }}</h6></li>
+                            <li><a class="dropdown-item" href="#">My Account</a></li>
+                            <li><a class="dropdown-item" href="#">My Classifieds</a></li>
+                            <li><a class="dropdown-item" href="#">My Messages</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}">Sign Out</a></li>
+                        @endif
                     </ul>
                 </div>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\AuthController;
 
 /** temp frontend routes for joel's building stuff */
 
@@ -32,6 +33,14 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+
+
+/**
+ * User Routes
+ */
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'submitLogin'])->name('login.submit');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
