@@ -47,8 +47,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 /**
  * Admin Routes
  */
-
-Route::prefix('admin')->group(function () {
-    Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
-    Route::get('/listings/{id}', [ListingController::class, 'adminShow'])->name('admin.listings.show');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('admin')->group(function () {
+        Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
+        Route::get('/listings/{id}', [ListingController::class, 'adminShow'])->name('admin.listings.show');
+    });
 });
