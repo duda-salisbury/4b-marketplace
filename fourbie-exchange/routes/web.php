@@ -22,6 +22,10 @@ Route::get('/listings/show', function () {
     return view('listings.show');
 })->name('listings.show');
 
+Route::get('/listings/media', function () {
+    return view('listings.media');
+})->name('listings.media');
+
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 Route::post('/listings/create', [ListingController::class, 'submitCreate'])->name('listings.submitCreate');
 
@@ -33,6 +37,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+/** sellers/create */
+Route::get('/sellers/create', function () {
+    return view('sellers.create');
+})->name('sellers.create');
+
+/** sellers/index */
+Route::get('/sellers', function () {
+    $sellers = \App\Models\Dealer::paginate(50);
+    return view('sellers.index')->with('sellers', $sellers);
+})->name('sellers');
 
 
 /**
