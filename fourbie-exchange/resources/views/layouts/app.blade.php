@@ -10,6 +10,9 @@
     <link rel="icon" href="fourbie_circle.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    @yield('styles')
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- oswald font -->
@@ -24,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
 </head>
 
-<body>
+<body class="bg-dark">
 
     <nav class="navbar fixed-top navbar-expand-lg bg-white">
         <div class="container">
@@ -50,6 +53,16 @@
                         <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
                     </li>
 
+                    <!-- create seller -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('sellers.create')}}">Create Seller</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('sellers')}}">All Sellers</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
@@ -67,11 +80,17 @@
                         Account
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-                        <li><a class="dropdown-item" href="#">Register/Login</a></li>
-                        <li><a class="dropdown-item" href="#">My Account</a></li>
-                        <li><a class="dropdown-item" href="#">My Classifieds</a></li>
-                        <li><a class="dropdown-item" href="#">My Messages</a></li>
-                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        @if ( !Auth::check() )
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        @endif
+
+                        @if ( Auth::check() )
+                            <li><h6 class="dropdown-header">Welcome {{ Auth::user()->name }}</h6></li>
+                            <li><a class="dropdown-item" href="#">My Account</a></li>
+                            <li><a class="dropdown-item" href="#">My Classifieds</a></li>
+                            <li><a class="dropdown-item" href="#">My Messages</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}">Sign Out</a></li>
+                        @endif
                     </ul>
                 </div>
 
@@ -83,6 +102,8 @@
 
     <!-- Bootstrap 5.3 JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    @yield('scripts')
 
 </body>
 

@@ -55,6 +55,15 @@ class Listing extends Model
         return $this->hasOne(Upload::class, 'image_id');
     }
 
+    public function listing_images() {
+        return $this->hasMany(ListingImage::class, 'listing_id');
+    }
+
+    public function images() {
+        return $this->hasManyThrough(Upload::class, ListingImage::class, 'listing_id', 'id', 'id', 'image_id');
+    }
+
+
     public function carfax() {
         return $this->hasOne(Upload::class, 'carfax_id');
     }
@@ -68,7 +77,11 @@ class Listing extends Model
      * Property Helpers
      */
     public function generateTitle() {
-        return $this->year . ' ' . $this->make->name . ' ' . $this->model->name;
+        $title = $this->year . ' ' . $this->make->name;
+        if ( $this->model ) {
+            $title .= ' ' . $this->model->name;
+        }
+        return $title;
     }
     
     public function generateSlug() {

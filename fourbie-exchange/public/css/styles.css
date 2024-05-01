@@ -2,6 +2,10 @@
   border-radius: 0 !important;
 }
 
+.container {
+  max-width: 1400px;
+}
+
 .filters {
   position: sticky;
   top: 50px;
@@ -16,6 +20,10 @@
 .material-symbols-outlined {
   position: relative;
   bottom: -5px;
+}
+
+.card, .alert {
+  border-radius: 0px;
 }
 
 h1,
@@ -166,8 +174,88 @@ body {
   color: #7b7b7b;
 }
 
+#fe-classifiedsHeader {
+  position: sticky;
+  top:70px;
+  z-index: 2;
+}
 
 
+.fe-vehicleSpecs {
+  color:#fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top:10px;
+}
+
+.fe-vehicleSpecs__item {
+  display: flex;
+  width:100%;
+  align-items: center;
+}
+
+
+.fe-vehicleSpecs__item a {
+  color:#bb5a5a;
+}
+
+
+.fe-vehicleSpecs__item>h3 {
+  width: 30%;
+  background-color:#040314;
+  color:#eee;
+  text-indent: 15px;
+  font-size:14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+white-space: nowrap;
+}
+
+.fe-vehicleSpecs__item>h5 {
+  width: 70%;
+  background-color:#eee;
+  color:#040314;
+  text-indent: 15px;
+  font-size:14px;
+}
+
+
+.fe-vehicleSpecs__item > h5, .fe-vehicleSpecs__item > h3 {
+  padding: 10px 5px;
+  margin-bottom: 5px;
+}
+
+.fe-vehicleSpecs__item>h3 {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.fe-vehicleDescription {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 10px;
+}
+
+.seller-info {
+  position: sticky;
+  top: 80px;
+}
+
+.seller-info a {
+  color: #bb5a5a;
+  font-size:18px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.nav-tabs .nav-item a{
+  border-radius: 0px!important;
+  color:#fff;
+}
+.nav-tabs .active {
+  color: #040314!important;
+}
 
 /* Badge Classes */
 .bg-primary {
@@ -354,20 +442,19 @@ body {
   transition: 0.5s;
 }
 
-.thumb-container .view-more:hover::before {
- 
-}
+
 
 
 /** Breadcrumb */
 
 .breadcrumb-item {
   font-size:16px;
+
 }
 
 .breadcrumb-item a {
   position: relative;
-  color:#332C13;
+  color:#c8a95c;
  
   z-index: 0;
   text-decoration: underline;

@@ -106,6 +106,14 @@ return new class extends Migration
             $table->string('vin')->nullable();
             $table->timestamps();
         });
+
+        // Create Listing Images
+        Schema::create('listing_images', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('listing_id')->constrained()->onDelete('cascade');
+            $table->foreignId('image_id')->constrained('uploads')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
