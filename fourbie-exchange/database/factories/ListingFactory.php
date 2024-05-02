@@ -39,11 +39,8 @@ class ListingFactory extends Factory
             'vehicle_make_id' => $make->id
         ]);
 
-        $vehicleType = Str::headline($this->faker->vehicleType());
-        $type = VehicleType::firstOrCreate([
-            'name' => $vehicleType,
-            'slug' => Str::slug($vehicleType)
-        ]);
+        $types = VehicleType::all();
+        $type = $types->random();
 
         return [
             'title' => $title,

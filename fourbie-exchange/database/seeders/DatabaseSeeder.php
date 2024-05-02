@@ -22,6 +22,52 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com'
         ]);
+
+        $vehicleTypes = [
+            [
+                'name' => 'American',
+                'slug' => 'american'
+            ],
+            [
+                'name' => 'European',
+                'slug' => 'european'
+            ],
+            [
+                'name' => 'Ex-Military & Service Vehicles',
+                'slug' => 'military-service-vehicles'
+            ],
+            [
+                'name' => 'Expedition Vehicles',
+                'slug' => 'expedition-vehicles'
+            ],
+            [
+                'name' => 'Imports',
+                'slug' => 'imports'
+            ],
+            [
+                'name' => 'Pickup Trucks',
+                'slug' => 'trucks'
+            ],
+            [
+                'name' => 'Projects',
+                'slug' => 'projects'
+            ],
+            [
+                'name' => 'SUVs',
+                'slug' => 'SUVs'
+            ],
+            [
+                'name' => 'Vans & Campers',
+                'slug' => 'vans-campers'
+            ]
+        ];
+
+        foreach($vehicleTypes as $type) {
+            VehicleType::firstOrCreate([
+                'name' => $type['name'],
+                'slug' => $type['slug']
+            ]);
+        }
         $listings = Listing::factory(100)->create();
     }
 }

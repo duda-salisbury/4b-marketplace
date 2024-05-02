@@ -20,7 +20,8 @@ class ListingController extends Controller
 
 
     public function create() {
-        return view('listings.create');
+        $types = VehicleType::all();
+        return view('listings.create', compact('types'));
     }
 
     public function submitCreate(CreateListingRequest $request) {        

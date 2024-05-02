@@ -123,11 +123,9 @@
                                     <label for="vehicleType" class="form-label">Vehicle Type</label>
                                     <!-- multiple select -->
                                     <select name="vehicleType" id="vehicleType" class="form-select" multiple>
-                                        <option value="Japanese">Japanese</option>
-                                        <option value="Import">Import</option>
-                                        <option value="Expedition">Expedition Vehicles</option>
-                                        <option value="Military">Military Vehicles</option>
-                                        <option value="Van">Van</option>
+                                        @foreach($types as $type)
+                                            <option value="{{ $type->id }}" @selected(old('vehicle_type_id') === $type->id)>{{ $type->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
