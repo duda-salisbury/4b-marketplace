@@ -12,6 +12,12 @@ use App\Http\Requests\CreateListingRequest;
 
 class ListingController extends Controller
 {
+    public function index() {
+        $listings = Listing::paginate(50);
+
+        return view('listings.index', compact('listings'));
+    }
+
 
     public function create() {
         return view('listings.create');
@@ -59,6 +65,11 @@ class ListingController extends Controller
         return redirect()->route('listings')->with('success', 'Listing created successfully');
     }
 
+
+
+    /**
+     * ADMIN CONTROLS
+     */
     public function viewAll() {
         $listings = Listing::paginate(50);
 

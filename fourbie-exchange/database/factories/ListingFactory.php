@@ -24,7 +24,7 @@ class ListingFactory extends Factory
         $this->faker->addProvider(new FakeCar($this->faker));
         $vehicle = $this->faker->vehicleArray();
 
-        $year = $this->faker->biasedNumberBetween(1950, date('Y'), 'sqrt');
+        $year = $this->faker->biasedNumberBetween(1940, date('Y'), 'sqrt');
         $title = $year . ' ' . $vehicle['brand'] . ' ' . $vehicle['model'];
         $content = $this->faker->paragraphs(3, true);
         
@@ -44,6 +44,7 @@ class ListingFactory extends Factory
             'name' => $vehicleType,
             'slug' => Str::slug($vehicleType)
         ]);
+
         return [
             'title' => $title,
             'slug' => Str::slug($title),
@@ -58,7 +59,7 @@ class ListingFactory extends Factory
             'model_year' => $year,
             'color' => fake()->colorName(),
             'transmission' => fake()->randomElement(['automatic', 'manual']),
-            'fuel_type' => fake()->randomElement(['gasoline', 'diesel', 'electric']),
+            'fuel_type' => fake()->randomElement(['gasoline', 'diesel', 'electric', 'hybrid']),
             'engine' => fake()->randomElement(['v6', 'v8', 'v12']),
             'drivetrain' => fake()->randomElement(['awd', '4x4', '4x2']),
             'body_style' => fake()->randomElement(['sedan', 'coupe', 'suv', 'truck', 'van']),
