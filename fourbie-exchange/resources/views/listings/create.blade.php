@@ -122,9 +122,9 @@
                                 <div class="mb-3">
                                     <label for="vehicleType" class="form-label">Vehicle Type</label>
                                     <!-- multiple select -->
-                                    <select name="vehicleType" id="vehicleType" class="form-select" multiple>
+                                    <select name="vehicle_type_id[]" id="vehicleType" class="form-select" multiple>
                                         @foreach($types as $type)
-                                            <option value="{{ $type->id }}" @selected(old('vehicle_type_id') === $type->id)>{{ $type->name }}</option>
+                                            <option value="{{ $type->id }}" @selected(in_array($type->id, old('vehicle_type_id', [])))>{{ $type->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

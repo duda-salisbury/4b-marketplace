@@ -44,7 +44,7 @@ class ListingSearch extends Component
 
     public function render()
     {
-        $listings = Listing::with(['make', 'model', 'type'])->published();
+        $listings = Listing::with(['make', 'model', 'types'])->published();
 
         if ( $this->vehicle_model_id ) {
             $listings->where('vehicle_model_id', $this->vehicle_model_id);
@@ -71,7 +71,7 @@ class ListingSearch extends Component
         }
 
         if ( $this->vehicle_type ) {
-            $listings->whereRelation('type', 'slug', '=', $this->vehicle_type);
+            $listings->whereRelation('types', 'slug', '=', $this->vehicle_type);
         }
 
         if ( $this->eras ) {

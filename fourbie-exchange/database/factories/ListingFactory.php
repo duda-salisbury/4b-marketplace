@@ -39,9 +39,6 @@ class ListingFactory extends Factory
             'vehicle_make_id' => $make->id
         ]);
 
-        $types = VehicleType::all();
-        $type = $types->random();
-
         return [
             'title' => $title,
             'slug' => Str::slug($title),
@@ -63,8 +60,7 @@ class ListingFactory extends Factory
             'title_status' => fake()->randomElement(['clean', 'salvage', 'rebuilt']),
             'vin' => fake()->regexify('[A-Z0-9]{17}'),
             'vehicle_make_id' => $make->id,
-            'vehicle_model_id' => $model->id,
-            'vehicle_type_id' => $type->id,
+            'vehicle_model_id' => $model->id
         ];
     }
 }

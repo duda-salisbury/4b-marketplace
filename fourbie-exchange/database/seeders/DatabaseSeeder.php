@@ -68,6 +68,11 @@ class DatabaseSeeder extends Seeder
                 'slug' => $type['slug']
             ]);
         }
-        $listings = Listing::factory(100)->create();
+
+        $types = VehicleType::all();
+        $listings = Listing::factory(100)->create()
+            ->each(function($listing) use ($types) {
+                $listing->types()->sync($types->random());
+            });
     }
 }

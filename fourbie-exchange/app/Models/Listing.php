@@ -46,8 +46,8 @@ class Listing extends Model
         return $this->belongsTo(VehicleModel::class, 'vehicle_model_id');
     }
 
-    public function type() {
-        return $this->belongsTo(VehicleType::class, 'vehicle_type_id');
+    public function types() {
+        return $this->belongsToMany(VehicleType::class);
     }
 
     public function image()
