@@ -232,38 +232,26 @@
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="editor" role="tabpanel"
-                                    aria-labelledby="editor-tab">
+                                <div class="tab-pane fade show active" id="editor" role="tabpanel" aria-labelledby="editor-tab">
                                     <div class="card-body description-editor">
-                                        <!-- markdown toolbar -->
+                                        <!-- HTML toolbar -->
                                         <div class="btn-group mb-3">
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('**','**')"><i
-                                                    class="bi bi-type-bold"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('*','*')"><i
-                                                    class="bi bi-type-italic"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('# ','')"><i class="bi bi-type-h2"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('## ','')"><i class="bi bi-type-h3"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('### ','')"><i class="bi bi-type-h4"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('[Link Text](url)','')"><i
-                                                    class="bi bi-link"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('- ','')"><i class="bi bi-list-ul"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('> ','')"><i
-                                                    class="bi bi-chat-quote"></i></button>
-                                            <button type="button" class="btn btn-secondary"
-                                                onclick="insertMarkdown('```','\n```')"><i
-                                                    class="bi bi-code"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<strong>','</strong>')"><i class="bi bi-type-bold"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<em>','</em>')"><i class="bi bi-type-italic"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<h2>','</h2>')"><i class="bi bi-type-h2"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<h3>','</h3>')"><i class="bi bi-type-h3"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<h4>','</h4>')"><i class="bi bi-type-h4"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertLink()"><i class="bi bi-link"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertList()"><i class="bi bi-list-ul"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<blockquote>','</blockquote>')"><i class="bi bi-chat-quote"></i></button>
+                                            <button type="button" class="btn btn-secondary" onclick="insertHTML('<pre><code>','</code></pre>')"><i class="bi bi-code"></i></button>
                                         </div>
+                                        <!-- Textarea for HTML input -->
                                         <textarea name="content" id="description" rows="12" class="form-control"></textarea>
                                     </div>
                                 </div>
+                                
+                                
                                 <div class="tab-pane fade" id="preview" role="tabpanel" aria-labelledby="preview-tab">
                                     <div class="card-body">
                                         <div id="previewContent"></div>

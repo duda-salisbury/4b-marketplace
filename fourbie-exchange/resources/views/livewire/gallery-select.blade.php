@@ -8,7 +8,7 @@
 
     <button type="button" wire:click="addFile">Upload</button>
 
-    <div class="row mt-4">
+    <div id="imageContainer" class="row mt-4 ">
         @foreach($files as $i => $file)
         <div class="col-md-3">
             <img src="{{ $file->url }}" alt="" class="img-fluid">

@@ -22,6 +22,10 @@ Route::get('/listings/show', function () {
     return view('listings.show');
 })->name('listings.show');
 
+Route::get('/listings/premium', function () {
+    return view('listings.premium');
+})->name('listings.premium');
+
 Route::get('/listings/media', function () {
     return view('listings.media');
 })->name('listings.media');
