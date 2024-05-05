@@ -112,7 +112,7 @@ h6,
 body {
   background-color: #ebe6df;
   font-size: 14px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Quattrocento', sans-serif;
 }
 
 .navbar {
@@ -510,7 +510,7 @@ white-space: nowrap;
   /** big and fancy font **/
   font-size: 48px;
   text-transform: uppercase;
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .featured-listing .fe-VehicleDescription {
