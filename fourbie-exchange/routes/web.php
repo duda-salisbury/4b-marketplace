@@ -6,17 +6,12 @@ use App\Http\Controllers\AuthController;
 
 /** temp frontend routes for joel's building stuff */
 
-Route::get('/', function () {
-    return view('listings.index');
-})->name('home');
+Route::get('/', [ListingController::class, 'index'])->name('home');
+Route::get('/listings', function() { return redirect('/'); })->name('listings');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-
-Route::get('/listings', function () {
-    return view('listings.index');
-})->name('listings');
 
 Route::get('/listings/show', function () {
     return view('listings.show');

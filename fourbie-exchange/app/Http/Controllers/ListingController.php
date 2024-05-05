@@ -12,14 +12,21 @@ use App\Http\Requests\CreateListingRequest;
 
 class ListingController extends Controller
 {
+    public function index() {
+        $listings = Listing::paginate(50);
+
+        return view('listings.index', compact('listings'));
+    }
+
 
     public function create() {
-        return view('listings.create');
+        $types = VehicleType::all();
+        return view('listings.create', compact('types'));
     }
 
     public function submitCreate(CreateListingRequest $request) {        
         $l = new Listing;
-        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip', 'carfax_upload_id', 'photo_id']));
+        $l->fill($request->safe()->except(['name', 'phone', 'email', 'zip', 'carfax_upload_id', 'photo_id', 'vehicle_type_id']));
 
         $make = VehicleMake::find($request->vehicle_make_id);
         $l->make()->associate($make);
@@ -48,6 +55,11 @@ class ListingController extends Controller
 
         $l->save();
 
+        if ( $request->has('vehicle_type_id') ) {
+            $types = VehicleType::whereIn('id', $request->vehicle_type_id)->get();
+            $l->types()->sync($types);
+        }
+
         // Add Gallery Images
         if ( $request->input('photo_id') && count($request->photo_id) > 0 ) {
             $createMany = array_map(function($photo_id) {
@@ -59,6 +71,11 @@ class ListingController extends Controller
         return redirect()->route('listings')->with('success', 'Listing created successfully');
     }
 
+
+
+    /**
+     * ADMIN CONTROLS
+     */
     public function viewAll() {
         $listings = Listing::paginate(50);
 
@@ -66,7 +83,7 @@ class ListingController extends Controller
     }
 
     public function adminShow($id) {
-        $listing = Listing::with(['make', 'model', 'dealer', 'images'])->findOrFail($id);
+        $listing = Listing::with(['make', 'model', 'dealer', 'images', 'types'])->findOrFail($id);
 
         return view('listings.admin.show', compact('listing'));
     }

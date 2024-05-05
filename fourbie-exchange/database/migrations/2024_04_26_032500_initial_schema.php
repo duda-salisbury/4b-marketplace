@@ -84,7 +84,6 @@ return new class extends Migration
             $table->text('external_url')->nullable();
             $table->foreignId('vehicle_make_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('vehicle_model_id')->nullable()->constrained()->onDelete('set null');
-            $table->foreignId('vehicle_type_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('dealer_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('syndication_source_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('image_id')->nullable()->constrained('uploads')->onDelete('set null');
@@ -107,6 +106,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('listing_vehicle_type', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('listing_id')->constrained()->onDelete('cascade');
+            $table->foreignId('vehicle_type_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+        });
+
         // Create Listing Images
         Schema::create('listing_images', function (Blueprint $table) {
             $table->id();
@@ -120,7 +126,9 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {  
+    { 
+        Schema::dropIfExists('listing_images');
+        Schema::dropIfExists('listing_vehicle_types'); 
         Schema::dropIfExists('listings');
         Schema::dropIfExists('dealers');
         Schema::dropIfExists('syndication_sources');

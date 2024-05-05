@@ -46,8 +46,8 @@ class Listing extends Model
         return $this->belongsTo(VehicleModel::class, 'vehicle_model_id');
     }
 
-    public function type() {
-        return $this->belongsTo(VehicleType::class, 'vehicle_type_id');
+    public function types() {
+        return $this->belongsToMany(VehicleType::class);
     }
 
     public function image()
@@ -77,7 +77,7 @@ class Listing extends Model
      * Property Helpers
      */
     public function generateTitle() {
-        $title = $this->year . ' ' . $this->make->name;
+        $title = $this->model_year . ' ' . $this->make->name;
         if ( $this->model ) {
             $title .= ' ' . $this->model->name;
         }
@@ -101,6 +101,18 @@ class Listing extends Model
         $this->slug = $this->generateSlug();
         // $this->excerpt = $this->generateExcerpt();
     }
+
+    /**
+     * Query Scopes
+     */
+    public function scopePublished($query) {
+        return $query->where('status', 'publish');
+    }
+
+    public function scopeDraft($query) {
+        return $query->where('status', 'draft');
+    }
+
 
     /**
      * Model Events
