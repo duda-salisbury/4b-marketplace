@@ -53,6 +53,11 @@
                         <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
                     </li>
 
+                    <!-- premium listing -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('listings.premium')}}">Premium Listing</a>
+                    </li>
+
                     <!-- create seller -->
 
                     <li class="nav-item">
