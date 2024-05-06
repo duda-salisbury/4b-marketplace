@@ -53,7 +53,7 @@ class CreateListingRequest extends FormRequest
             'vehicle_model_id' => 'exists:vehicle_models,id|nullable',
             'vehicle_type_id' => 'array|nullable',
             'vehicle_type_id.*' => 'exists:vehicle_types,id',
-            'image_id' => 'exists:images,id|nullable',
+            'image_id' => 'exists:uploads,id|nullable',
             'seller_id' => 'exists:users,id|nullable',
 
             'carfax_upload_id' => 'exists:uploads,id|nullable',
