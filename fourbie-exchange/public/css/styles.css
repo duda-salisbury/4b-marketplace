@@ -60,10 +60,7 @@ h6,
   font-weight: 200;
 }
 
-.card a {
-  /** green/success color **/
-  color: #5c826b;
-}
+
 
 /** make the card headers transparent and bump them up into the image */
 .vert-card .card-header {
@@ -361,6 +358,11 @@ white-space: nowrap;
   color: #fff;
 }
 
+.btn-outline-white {
+  border-color: #fff;
+  color: #fff;
+}
+
 .btn-alert {
   background-color: #c8a95c;
   border-color: #c8a95c;
@@ -523,3 +525,38 @@ white-space: nowrap;
 .featured-listing .fe-vehicleSpecs__item {
   width: 50%;
 }
+
+
+.fe-hero {
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fe-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.fe-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color:#fff;
+
+}
+
+.fe-hero--sell {
+  background-image: url('/img/2.jpg');
+}
+

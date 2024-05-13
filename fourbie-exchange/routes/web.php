@@ -47,6 +47,21 @@ Route::get('/sellers', function () {
     return view('sellers.index')->with('sellers', $sellers);
 })->name('sellers');
 
+/** sell/index */
+Route::get('/sell', function () {
+    return view('sell.index');
+})->name('sell.index');
+
+/** sell/premium */
+Route::get('/sell/premium', function () {
+    return view('sell.premium');
+})->name('sell.premium');
+
+/** sell/standard */
+Route::get('/sell/standard', function () {
+    return view('sell.standard');
+})->name('sell.standard');
+
 
 /**
  * User Routes
