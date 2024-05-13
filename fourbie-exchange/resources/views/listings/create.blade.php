@@ -129,8 +129,11 @@
                                     </select>
                                 </div>
 
-                                <livewire:upload-carfax />
-
+                                <div class="mb-3">
+                                    <label for="carfax" class="form-label">Carfax</label>
+                                    <livewire:media-picker id="carfax" inputName="carfax_upload_id" fileType="documents" />
+                                </div>
+                                
                                 <!-- excerpt -->
                                 <div class="mb-3">
                                     <label for="excerpt" class="form-label">Excerpt</label>
@@ -175,7 +178,7 @@
                                 <small>(Automatically populated when a seller is selected.)</small>
                             </div>
                             <div class="card-body">
-                                    <livewire:seller-select-create />
+                                <livewire:seller-select-create />
                             </div>
                         </div>
 
@@ -193,17 +196,16 @@
                                 <small>(The first photo will be the main photo for the listing.)</small>
                             </div>
                             <div class="card-body listing-create-photos">
-
-                               <livewire:gallery-select />
-
+                                <div>
+                                    <label for="listingPhotos" class="form-label">Listing Photos</label>
+                                    <livewire:media-picker id="listingPhotos" :multiple="true" inputName="photo_id" fileType="image" />
+                                </div>
+                               
                                 <!-- hero image (for premium listings) -->
-
                                 <div class="mt-4">
                                     <label for="heroImage" class="form-label">Hero Image</label>
-                                    <input type="file" name="heroImage" id="heroImage" class="form-control">
+                                    <livewire:media-picker id="heroImage" inputName="image_id" fileType="image" />
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

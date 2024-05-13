@@ -52,7 +52,7 @@ class Listing extends Model
 
     public function image()
     {
-        return $this->hasOne(Upload::class, 'image_id');
+        return $this->belongsTo(Upload::class, 'image_id');
     }
 
     public function listing_images() {
@@ -65,7 +65,7 @@ class Listing extends Model
 
 
     public function carfax() {
-        return $this->hasOne(Upload::class, 'carfax_id');
+        return $this->belongsTo(Upload::class, 'carfax_id');
     }
 
     public function dealer() {

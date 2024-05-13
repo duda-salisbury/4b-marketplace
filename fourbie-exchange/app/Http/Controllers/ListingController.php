@@ -83,7 +83,7 @@ class ListingController extends Controller
     }
 
     public function adminShow($id) {
-        $listing = Listing::with(['make', 'model', 'dealer', 'images', 'types'])->findOrFail($id);
+        $listing = Listing::with(['make', 'model', 'dealer', 'images', 'types', 'image', 'carfax', 'dealer'])->findOrFail($id);
 
         return view('listings.admin.show', compact('listing'));
     }

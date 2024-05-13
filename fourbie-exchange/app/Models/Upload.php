@@ -51,4 +51,8 @@ class Upload extends Model
         }
         return true;
     }
+
+    public function isPDF() {
+        return $this->mime === 'application/pdf';
+    }
 }
