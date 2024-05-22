@@ -67,6 +67,9 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
+            // optional has one User
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            
             $table->timestamps();
         });
 

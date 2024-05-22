@@ -23,6 +23,11 @@ class Dealer extends Model
         return $slug;
     }
 
+    /** optional has one User */
+    public function user() {
+        return $this->hasOne(User::class);
+    }
+
     /**
      * Model Events
      */
