@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Listing Details')
+@section('title', 'Listing Details - {{ $listing->title }}')
 
 @section('content')
     <div class="container mt-5 pt-3">
@@ -30,7 +30,7 @@
 					
 					">$17,900</span>
 
-                    <h3 class="text-uppercase mb-0 me-3">1945 Willys Jeep CJ-2A</h3>
+                    <h3 class="text-uppercase mb-0 me-3">{{ $listing->title }}</h3>
                     <span class="fe-vehicle-type badge bg-grey">SUV</span>
 
                 </div>
@@ -68,7 +68,7 @@
         <div class="row img-hero d-none d-md-flex pt-3">
             <div class="col-md-9 img-hero-hero">
                 <a href="/listings/media">
-                    <img src="https://fourbieexchange.com/wp-content/uploads/2024/04/1945-willys-jeep-cj-2a-5.jpg"
+                    <img src="{{ $listing->images[0]->url}}"
                         class="img-fluid" alt="1945-willys-jeep-cj-2a (5)">
                 </a>
             </div>
@@ -92,42 +92,7 @@
                 <div class="bg-white p-3">
                     <div class="mb-4">
                         <h2>Description</h2>
-                        <p>We are excited to offer this RARE 1st year 1945 Willys Jeep CJ-2A.
-
-                            This Jeep is the first civilian version built but it has been made to look like the military
-                            version. This jeep is a blast to drive and gets tons of attention and runs great. In preparation
-                            for sale this CJ-2A got new tires, new battery, new carburetor, rebuilt gas tank, new gas lines,
-                            new brake lines, new starter, rebuilt transmission, new fuel pump, new rotor, plugs and points.
-                            This Willys Jeep is easy to start and we’ve reached 50mph on GPS. Seat Belts have been added for
-                            safety. The oil pressure gauge works, the wipers work, the temp gauge works, the headlights work
-                            and the black out light on the driver fender works. This Willys CJ-2A would be great for getting
-                            around the neighborhood, running errands, running around the ranch, parades or used at the lake
-                            house or beach! We can ship anywhere in the US and offer Airport Pickup. Third Party Inspections
-                            always welcome. Call, TEXT or Email anytime!
-                        </p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h2>Features</h2>
-                        <ul>
-                            <li>4x4</li>
-                            <li>Manual Transmission</li>
-                            <li>4 Cylinder Engine</li>
-                            <li>Soft Top</li>
-                            <li>Runs Great</li>
-                        </ul>
-                    </div>
-
-                    <div class="mb-4">
-                        <h2>Vehicle History</h2>
-                        <p>This vehicle has no reported accidents or damage.</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h2>Price Comparison</h2>
-                        <iframe loading="lazy" style="border: 0;" src="https://www.classic.com/widget/K9KoQs2vx3uv4z/"
-                            width="100%" height="450"></iframe>
-                    </div>
+                        <p>{{ $listing->content }}</p>
                 </div>
                 <h2 class="mt-4 text-white">Videos</h2>
                 <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">

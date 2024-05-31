@@ -598,3 +598,8 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.fe-pagination .text-muted {
+  color: #fff!important;
+  font-size:14px!important;
+}

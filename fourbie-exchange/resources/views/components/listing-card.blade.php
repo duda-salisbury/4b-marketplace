@@ -6,7 +6,11 @@
         </div>
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{ $listing->title }}</h5>
+        <h5 class="card-title">
+            <a href="listings/{{ $listing->id }}">
+                {{ $listing->title }}
+            </a>
+        </h5>
         <p class="card-text">{{ $listing->excerpt }}</p>
     </div>
     <ul class="list-group list-group-flush">

@@ -9,6 +9,10 @@
     </title>
     <!-- Bootstrap 5.3 CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- bs icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <!-- HTMX CDN -->
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
 
@@ -17,6 +21,8 @@
             background-color: #ebe6df;
         }
     </style>
+
+    @yield('styles')
 </head>
 
 <body class="admin">
@@ -28,6 +34,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.listings') }}">Listings</a>
                 </li>
+
+                <!-- primary CTA is to add a new listing -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.listings.create') }}">Add Listing</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -38,6 +49,8 @@
 
     <!-- Bootstrap 5.3 JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    @yield('scripts')
 
 
 </body>

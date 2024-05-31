@@ -18,6 +18,12 @@ class ListingController extends Controller
         return view('listings.index', compact('listings'));
     }
 
+    public function show($id) {
+        $listing = Listing::with(['make', 'model', 'dealer', 'images', 'types', 'image', 'carfax', 'dealer'])->findOrFail($id);
+
+        return view('listings.show', compact('listing'));
+    }
+
 
     public function create() {
         $types = VehicleType::all();
@@ -87,4 +93,17 @@ class ListingController extends Controller
 
         return view('listings.admin.show', compact('listing'));
     }
+
+    public function adminEdit($id) {
+        $listing = Listing::with(['make', 'model', 'dealer', 'images', 'types', 'image', 'carfax', 'dealer'])->findOrFail($id);
+        $types = VehicleType::all();
+
+        return view('listings.admin.edit', compact('listing', 'types'));
+    }
+
+    public function adminCreate() {
+        $types = VehicleType::all();
+        return view('listings.admin.create', compact('types'));
+    }
+
 }

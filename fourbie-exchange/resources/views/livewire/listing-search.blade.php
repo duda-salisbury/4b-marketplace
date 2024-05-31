@@ -173,8 +173,8 @@
                     </div>
                 </div>
                 <div class="text-white my-4">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <div class="flex-grow-1 fe-pagination">
                             {{ $listings->links() }}
                         </div>
                         <div class="ms-4">

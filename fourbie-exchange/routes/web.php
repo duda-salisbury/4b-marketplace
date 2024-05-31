@@ -3,11 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\AuthController;
+use App\Models\Listing;
 
 /** temp frontend routes for joel's building stuff */
 
-Route::get('/', [ListingController::class, 'index'])->name('home');
-Route::get('/listings', function() { return redirect('/'); })->name('listings');
+Route::get('/', function(){
+    return view('home');
+})->name('home');
+
+Route::get('/listings', function() { 
+    return view('listings.index');
+})->name('listings.index');
 
 Route::get('/about', function () {
     return view('about');
@@ -16,6 +22,8 @@ Route::get('/about', function () {
 Route::get('/listings/show', function () {
     return view('listings.show');
 })->name('listings.show');
+
+Route::get('listing/{id}', [ListingController::class, 'show'])->name('listings.single');
 
 Route::get('/listings/premium', function () {
     return view('listings.premium');
@@ -78,6 +86,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function() {
     Route::prefix('admin')->group(function () {
         Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
+        Route::get('/listings/create', [ListingController::class, 'adminCreate'])->name('admin.listings.create');
+
         Route::get('/listings/{id}', [ListingController::class, 'adminShow'])->name('admin.listings.show');
     });
+    
 });

@@ -2,9 +2,9 @@
     <div>
         <button wire:click="openDialog" type="button" data-bs-toggle="modal" data-bs-target="#{{ $id }}" class="btn btn-primary mb-3">Select Media</button>
 
-        <div class="row">
+        <div class="row draggable-container">
             @foreach($confirmed as $file)
-            <div class="col-auto">
+            <div class="col-auto draggable-container__item" draggable="true">
                 @if ( $file->isPDF() )
                     <div class="d-flex flex-column align-items-center justify-content-around border" style="height: 100px; width: 100px;">
                         <i class="bi bi-filetype-pdf text-danger" style="font-size: 40px;"></i>
