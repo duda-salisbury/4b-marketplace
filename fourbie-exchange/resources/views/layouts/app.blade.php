@@ -49,15 +49,6 @@
                         <a class="nav-link" href="/listings">Listings</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('listings.create') }}">Create Listing</a>
-                    </li>
-
-                    <!-- single listing -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
-                    </li>
-
                     <!-- premium listing -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('listings.premium')}}">Premium Listing</a>

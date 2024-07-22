@@ -33,12 +33,11 @@ Route::get('/listings/media', function () {
     return view('listings.media');
 })->name('listings.media');
 
-Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
-Route::post('/listings/create', [ListingController::class, 'submitCreate'])->name('listings.submitCreate');
+//Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 
-Route::get('/listings/edit', function ($listing) {
-    return view('listings.edit', ['listing' => $listing]);
-})->name('listings.edit');
+// Route::get('/listings/edit', function ($listing) {
+//     return view('listings.edit', ['listing' => $listing]);
+// })->name('listings.edit');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -87,6 +86,9 @@ Route::middleware(['auth'])->group(function() {
     Route::prefix('admin')->group(function () {
         Route::get('/listings', [ListingController::class, 'viewAll'])->name('admin.listings');
         Route::get('/listings/create', [ListingController::class, 'adminCreate'])->name('admin.listings.create');
+        Route::post('/listings/create', [ListingController::class, 'submitCreate'])->name('listings.submitCreate');
+        Route::get('/listings/edit/{id}', [ListingController::class, 'adminEdit'])->name('admin.listings.edit');
+
 
         Route::get('/listings/{id}', [ListingController::class, 'adminShow'])->name('admin.listings.show');
     });
