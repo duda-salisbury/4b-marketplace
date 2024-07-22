@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">
-            <a href="listings/{{ $listing->id }}">
+            <a href="listing/{{ $listing->id }}">
                 {{ $listing->title }}
             </a>
         </h5>

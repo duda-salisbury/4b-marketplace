@@ -68,8 +68,11 @@
         <div class="row img-hero d-none d-md-flex pt-3">
             <div class="col-md-9 img-hero-hero">
                 <a href="/listings/media">
-                    <img src="{{ $listing->images[0]->url}}"
-                        class="img-fluid" alt="1945-willys-jeep-cj-2a (5)">
+                    @if ($listing->images->count() > 0)
+                        <img src="{{ $listing->images[0]->url }}"
+                            class="img-fluid" alt="1945-willys-jeep-cj-2a (5)">
+                    @endif
+
                 </a>
             </div>
             <div class="col-md-3 hero-thumbs">
