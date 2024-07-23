@@ -33,11 +33,11 @@ Route::get('/listings/media', function () {
     return view('listings.media');
 })->name('listings.media');
 
-//Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
+Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 
-// Route::get('/listings/edit', function ($listing) {
-//     return view('listings.edit', ['listing' => $listing]);
-// })->name('listings.edit');
+Route::get('/listings/edit', function ($listing) {
+    return view('listings.edit', ['listing' => $listing]);
+})->name('listings.edit');
 
 Route::get('/contact', function () {
     return view('contact');
