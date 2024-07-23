@@ -9,8 +9,8 @@
     and low-cost sales solutions for private party sellers and dealers."
     :cta1="[
     'classname'=>'btn-outline-white text-white btn-lg', 
-    'url' => '/action1', 
-    'label' => 'Action 1']" />
+    'url' => '/sell/standard', 
+    'label' => 'Learn More']" />
 
     <div class="container pt-4">
 

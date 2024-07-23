@@ -1,11 +1,5 @@
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.draggable-image {
-    width: 150px;
-    height: 150px;
+.draggable-item {
+
     cursor: grab;
     position: relative;
     transition: transform 0.3s;

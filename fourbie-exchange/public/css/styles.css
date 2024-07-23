@@ -22,7 +22,8 @@
   bottom: -5px;
 }
 
-.card, .alert {
+.card,
+.alert {
   border-radius: 0px;
 }
 
@@ -60,10 +61,7 @@ h6,
   font-weight: 200;
 }
 
-.card a {
-  /** green/success color **/
-  color: #5c826b;
-}
+
 
 /** make the card headers transparent and bump them up into the image */
 .vert-card .card-header {
@@ -112,7 +110,7 @@ h6,
 body {
   background-color: #ebe6df;
   font-size: 14px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Quattrocento', sans-serif;
 }
 
 .navbar {
@@ -176,52 +174,56 @@ body {
 
 #fe-classifiedsHeader {
   position: sticky;
-  top:70px;
+  top: 70px;
   z-index: 2;
 }
 
 
 .fe-vehicleSpecs {
-  color:#fff;
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .fe-vehicleSpecs__item {
   display: flex;
-  width:100%;
+  width: 100%;
   align-items: center;
 }
 
 
+
+
+
 .fe-vehicleSpecs__item a {
-  color:#bb5a5a;
+  color: #bb5a5a;
 }
 
 
 .fe-vehicleSpecs__item>h3 {
   width: 30%;
-  background-color:#040314;
-  color:#eee;
+  background-color: #040314;
+  color: #eee;
   text-indent: 15px;
-  font-size:14px;
+  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
-white-space: nowrap;
+  white-space: nowrap;
 }
 
 .fe-vehicleSpecs__item>h5 {
   width: 70%;
-  background-color:#eee;
-  color:#040314;
+  background-color: #eee;
+  color: #040314;
   text-indent: 15px;
-  font-size:14px;
+  font-size: 14px;
 }
 
 
-.fe-vehicleSpecs__item > h5, .fe-vehicleSpecs__item > h3 {
+.fe-vehicleSpecs__item>h5,
+.fe-vehicleSpecs__item>h3 {
   padding: 10px 5px;
   margin-bottom: 5px;
 }
@@ -244,17 +246,18 @@ white-space: nowrap;
 
 .seller-info a {
   color: #bb5a5a;
-  font-size:18px;
+  font-size: 18px;
   text-decoration: underline;
   font-weight: 700;
 }
 
-.nav-tabs .nav-item a{
-  border-radius: 0px!important;
-  color:#fff;
+.nav-tabs .nav-item a {
+  border-radius: 0px !important;
+  color: #fff;
 }
+
 .nav-tabs .active {
-  color: #040314!important;
+  color: #040314 !important;
 }
 
 /* Badge Classes */
@@ -288,6 +291,11 @@ white-space: nowrap;
 
 .bg-fe-dark {
   background-color: #332C13;
+  color: #ffffff;
+}
+
+.bg-fe-orange {
+  background-color: #bb5a5a;
   color: #ffffff;
 }
 
@@ -353,6 +361,11 @@ white-space: nowrap;
   color: #fff;
 }
 
+.btn-outline-white {
+  border-color: #fff;
+  color: #fff;
+}
+
 .btn-alert {
   background-color: #c8a95c;
   border-color: #c8a95c;
@@ -380,11 +393,12 @@ white-space: nowrap;
   transition: 0.3s;
   max-height: 600px;
   width: 100%;
-  filter:brightness(80%);
+  filter: brightness(80%);
 
 }
 
-.img-hero-hero, .hero-thumbs {
+.img-hero-hero,
+.hero-thumbs {
   flex-grow: 1;
   overflow: hidden;
 }
@@ -416,25 +430,26 @@ white-space: nowrap;
   transition: 0.3s;
 }
 
-.img-hero a:hover, .img-hero-hero:hover img {
+.img-hero a:hover,
+.img-hero-hero:hover img {
   /** zoom in effect on hover **/
   transform: scale(1.03);
 }
 
 .thumb-container .view-more {
-  position:relative;
+  position: relative;
 }
 
 .thumb-container .view-more::before {
   content: 'All Photos';
   position: absolute;
-  top:0px;
-  left:0px;
-  bottom:0px;
-  right:0px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   font-size: 24px;
   font-weight: 700;
@@ -442,32 +457,149 @@ white-space: nowrap;
   transition: 0.5s;
 }
 
-
-
-
 /** Breadcrumb */
 
 .breadcrumb-item {
-  font-size:16px;
+  font-size: 16px;
 
 }
 
 .breadcrumb-item a {
   position: relative;
-  color:#c8a95c;
- 
+  color: #c8a95c;
+
   z-index: 0;
   text-decoration: underline;
-  transition: color 0.3s ease; /* Smooth transition for text color */
+  transition: color 0.3s ease;
+  /* Smooth transition for text color */
 }
 
 
 .breadcrumb-item a:hover::before {
-  width: 100%; /* Slide-in effect on hover */
+  width: 100%;
+  /* Slide-in effect on hover */
 }
 
 .breadcrumb-item a:hover {
- color:#bb5a5a;
+  color: #bb5a5a;
+}
+
+.featured-hero{
+  background-size: cover; background-position: center; height: 65vh;
+  position: relative;
+}
+
+.featured-hero__content {
+  position:relative;
+  z-index:1;
+}
+
+.featured-hero__content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.featured-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.featured-listing h2 {
+  color: #fff;
+  /** big and fancy font **/
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom:20px;
+}
+
+.featured-listing .fe-VehicleDescription {
+  color: #fff;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.featured-listing .fe-vehicleSpecs__item {
+  width: 50%;
 }
 
 
+.fe-hero {
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fe-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.fe-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color:#fff;
+
+}
+
+.fe-hero--sell {
+  background-image: url('/img/2.jpg');
+}
+
+.all-sellers th {
+  color: #fff;
+}
+
+.featured-listing .thumb-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+/** gallery is just a grid of thumbs 4 columns wide */
+.featured-listing .thumb-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+/** the thumbs are 1:1 aspect ratio */
+.featured-listing .thumb-container>a {
+  padding: 0;
+  margin: 0;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.featured-listing .thumb-container>a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fe-pagination .text-muted {
+  color: #fff!important;
+  font-size:14px!important;
+}

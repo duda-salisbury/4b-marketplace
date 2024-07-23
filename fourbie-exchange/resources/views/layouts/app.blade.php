@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap">
     <!-- Red Hat Display font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap">
+
+
+    <!-- quattrocento font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap">
+
     <!-- font yellowtail -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap">
     <!-- bs icons -->
@@ -44,13 +49,9 @@
                         <a class="nav-link" href="/listings">Listings</a>
                     </li>
 
+                    <!-- premium listing -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('listings.create') }}">Create Listing</a>
-                    </li>
-
-                    <!-- single listing -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('listings.show')}}">Single Listing</a>
+                        <a class="nav-link" href="{{route('listings.premium')}}">Premium Listing</a>
                     </li>
 
                     <!-- create seller -->
