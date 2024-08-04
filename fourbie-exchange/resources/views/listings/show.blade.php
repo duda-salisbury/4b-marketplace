@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Listing Details - {{ $listing->title }}')
+@section('title', 'Listing Details - ' . $listing->title)
 
 @section('content')
     <div class="container mt-5 pt-3">
